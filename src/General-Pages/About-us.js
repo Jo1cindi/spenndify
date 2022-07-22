@@ -1,6 +1,6 @@
 import React from 'react'
 import Navigation from '../Components/Navigation'
-import "../General-Pages/GeneralPagesStyles.css"
+import "../General-Pages/GenerlPagesStyles.css"
 import AboutusBanner from "../images/Aboutusbanner.png"
 
 const AboutUs = () => {
