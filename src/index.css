@@ -1,0 +1,1674 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #FBFBFB;
+  width: 100vw;
+}
+/* Logo */
+.logoBox{
+  width: 100%;
+  height: 10vh;
+}
+.logoBlue{
+  display: flex;
+}
+.logoBlue p{
+  padding-top: 15px;
+  color: #03045e;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+}
+
+/* Navigation */
+.navbar{
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navlogo{
+  height: 50px;
+  width: 155px;
+}
+.navlogo img{
+  width: 110%;
+  height: 110%;
+  margin-left: 1rem;
+}
+.nav-toggler{
+  width: 2wv;
+  display: none;
+  margin-right: 0;
+}
+.navlinks{
+  width: 73%;
+  margin-right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.infolinks{
+  width: 60%;
+  width: 30%;
+  margin: auto;
+}
+.infolinks ul{
+  display: flex;
+  justify-content: space-between;
+}
+.infolinks ul li{
+  list-style: none;
+}
+.infolink{
+  font-size: 18px;
+  color: rgba(5,5,5,0.7);
+  text-decoration: none;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+}
+.nav-links{
+  width: 35%;
+}
+.nav-links ul{
+  display: flex;
+  justify-content: space-around;
+}
+.nav-links ul li{
+  list-style: none;
+}
+.loginlink{
+  font-size: 20px;
+  color: rgba(5,5,5,0.7);
+  text-decoration: none;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+}
+.loginlink:hover{
+  color: #03045e;
+}
+.signuplink{
+  font-size: 20px;
+  color: #03045e;
+  text-decoration: none;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+}
+.signuplink:hover{
+  color: rgba(5,5,5,0.7);
+}
+
+
+/* Getting Started */
+.gettingStarted{
+  overflow-x: hidden;
+  position: relative;
+  width: 100vw;
+  height: 89vh;
+}
+.background-image{
+  height: 100%;
+  width: 100%;
+}
+.background-image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.gettingStartedText{
+  position: absolute;
+  top: 25%;
+  left: 30vw;
+  width: 40vw;
+  height: auto;
+}
+.welcome{
+  height: auto;
+  width: 40vw;
+  text-align: center;
+  margin: auto;
+}
+.welcome p{
+  padding-top: 12px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #FBFBFB;
+  font-size: 50px;
+  font-weight: bold;
+  border-top: 1px solid #FBFBFB;
+}
+.line{
+  width: 15vw;
+  height: 1px;
+  background-color: #FBFBFB;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.Spenndifydesc{
+  font-family: 'Nunito Sans', sans-serif;
+  color: rgba(251, 251, 251, 0.8);
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.getstartedbtn{
+  margin-left: 12.5vw;
+  margin-right: 12.5vw;
+  width: 15vw;
+  height: 40px;
+  border-radius: 30px;
+  background: none;
+  outline: none;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #FBFBFB;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+  border: #FBFBFB 2px solid;
+  cursor: pointer;
+}
+.getstartedlink{
+  position: absolute;
+  margin: auto;
+  color: #FBFBFB;
+  text-decoration: none;
+  text-align: center;
+  left: 0;
+  top: 20;
+  padding-top: 30px;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  padding-top: 10px;
+}
+.getstartedbtn:hover{
+  background-color: #FBFBFB;
+  color: #03045e;
+  text-decoration: none;
+}
+.getstartedbtn:hover .getstartedlink{
+  color: #03045e;
+}
+
+
+/* Patners */
+.Patners{
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+}
+.patnerstitle{
+  width: 60%;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.patnerstitle h3{
+  font-size: 30px;
+  font-weight: 700;
+  color: #03045e;
+}
+.patner-cards{
+  width: 40%;
+}
+.patner-card{
+  margin: 1rem;
+  margin-left: 3rem;
+  align-items: center;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+}
+.patner-card h4{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 10px;
+  text-align: left;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #03045e;
+  font-size: 24px;
+}
+.patner-card p{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 50px;
+  text-align: left;
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Nunito Sans', sans-serif;
+  color: rgba(5,5,5,0.7);
+}
+.patner-link{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 80%;
+  text-align: left;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 10px;
+}
+.patnerlink{
+  color: #5E0F0C;
+  font-weight: bold;
+}
+/* Sign Up Page */
+.signup{
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.banner{
+  position: relative;
+  height: 100vh;
+  width: 50%;
+}
+.banner img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.logowhite{
+  position: absolute;
+  top: 3vh;
+}
+.header-mobile{
+  display: none;
+}
+.signuptext{
+  position: absolute;
+  top: 38vh;
+  left: 8%;
+  width: 80%;
+  height: 200px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #FBFBFB;
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 1rem;
+  background-color: rgb(251, 251, 251, 0.2);
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+}
+.signuptext p{
+  padding-top: 25px;
+}
+.signup-form{
+  height: 100%;
+  width: 50%;
+  background-color: #FBFBFB;
+  text-align: center;
+}
+.signup-formtxt p{
+  font-size: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 10vh;
+  font-weight: 400;
+  color: rgba(5,5,5,0.5);
+}
+.signupform form{
+  width: 80%;
+  height: 70vh;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signupinput{
+  width: 328px;
+  height: 48px;
+}
+.continuebtn{
+  position: relative;
+  background-color: #03045e;
+  width: 328px;
+  height: 48px;
+  align-items: center;
+  margin-top: 30px;
+  border-radius: 30px;
+}
+.continuebtn input{
+  background-color: #03045e;
+  width: 100%;
+  height: 100%;
+  color: #FBFBFB;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.continuebtn input:disabled{
+  background-color: #344b71;
+}
+.haveanaccount{
+  position: absolute;
+  color: rgba(5,5,5,0.7);
+  top: 50px;
+  margin-left: 20px;
+  display: flex;
+  font-size: 16px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.login-link{
+  color: #03045e;
+  text-decoration: none;
+  margin-left: 5px;
+}
+.signupError{
+  font-size: 14px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: red;
+  margin-top: 5px;
+}
+
+/* Security Questions */
+.SecurityQuestions{
+  height: 100vh;
+  width: 100vw;
+  background-color: #FBFBFB;
+  display: flex;
+  overflow: hidden;
+}
+.banner{
+  position: relative;
+  height: 102vh;
+  width: 50%;
+}
+.banner img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.securitytxt{
+  position: absolute;
+  top: 40vh;
+  left: 8%;
+  width: 80%;
+  height: 30vh;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #FBFBFB;
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 1rem;
+  background-color: rgb(251, 251, 251, 0.2);
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+}
+.securitytxt p{
+  padding-top: 15px;
+  padding-left: 10px;
+}
+.Questions-form{
+  width: 50%;
+}
+.Questions-form p{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 5vh;
+  font-weight: 400;
+  color: rgba(5,5,5,0.5);
+  font-size: 20px;
+}
+.questionsform form{
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.continuebtn2{
+  position: relative;
+  width: 328px;
+  height: 48px;
+}
+.continuebtn2 input{
+  background-color: #03045e;
+  width: 100%;
+  height: 48px;
+  color: #FBFBFB;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.continuebtn2 input:disabled{
+  background-color: #344b71;
+}
+
+/* Login Page */
+.login{
+  background-color: #FBFBFB;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.logincard{
+  position: relative;
+  width: 50%;
+  height: 80%;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: #FBFBFB;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.logincard h3{
+  width: 328px;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 5px;
+  padding-top: 30px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #03045e;
+  font-size: 24px;
+  font-weight: bold;
+}
+.loginForm{
+  width: 328px;
+  margin: auto;
+}
+.emailfield{
+  width: 328px;
+  height: 48px;
+}
+.pinfield{
+  width: 328px;
+  height: 48px
+}
+.forgetpin{
+  width: 328px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.forgetpinLink{
+  color: #03045e;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  width: 20%;
+  margin-left: 75%;
+  margin-right: 0;
+
+}
+.loginError p{
+  font-family: 'Nunito Sans', sans-serif;
+  color: red;
+  font-size: 14px;
+}
+.loginBtn{
+  margin-top: 15px;
+  position: relative;
+  width: 328px;
+  height: 48px;
+}
+.loginBtn input{
+  background-color: #03045e;
+  width: 100%;
+  height: 48px;
+  color: #FBFBFB;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.loginBtn input:disabled{
+  background-color: #344b71;
+}
+.bottomLinks{
+  margin-top: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: rgba(5,5,5,0.8);
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+}
+.createaccountlink{
+  text-decoration: none;
+  margin-left: 5px;
+  color: #03045e;
+}
+
+
+
+/* Verification Page */
+.Accountverification{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.verificationcard{
+  width: 50%;
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  background-color: #FBFBFB;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.verification-info{
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.lottie-animation{
+  height: 100%;
+  width: 40%;
+}
+.animation{
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  margin-top: 60px;
+}
+.animationsize{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.Verificationcode{
+  height: 100%;
+  width: 60%;
+  text-align: left;
+}
+.verification-info h3{
+  margin-top: 10vh;
+  margin-left: 3rem;
+  font-size: 40px;
+  color: #03045e;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.verification-info p{
+  margin-top: 10px;
+  margin-left: 3rem;
+  font-size: 18px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: rgba(5,5,5,0.7);
+}
+.sendCode{
+  cursor: pointer;
+  width: 328px;
+  height: 48px;
+  background-color: #03045e;
+  color: #FBFBFB;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 20px;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+}
+.sendCode:hover{
+  background-color: #FBFBFB;
+  color: #03045e;
+  border: solid 2px #03045e;
+}
+.lottie-animation-mobile{
+  display: none;
+}
+
+
+/* Enter Verification Code Page */
+.EnterVerificationcodeCard{
+  width: 50%;
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  margin-top: 1rem;
+  background-color: #FBFBFB;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.EnterVerificationcode{
+  width: 60%;
+}
+.EnterVerificationcode h3{
+  margin-top: 10vh;
+  margin-left: 3rem;
+  font-size: 40px;
+  color: #03045e;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.EnterVerificationcode p{
+  margin-top: 10px;
+  margin-left: 3rem;
+  font-size: 18px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: rgba(5,5,5,0.7);
+}
+.verificationcodeInput{
+  width: 328px;
+  margin-left: 3rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.verificationcodeInputFields{
+  width: 300px;
+}
+.verify{
+  cursor: pointer;
+  width: 328px;
+  height: 48px;
+  background-color: #03045e;
+  color: #FBFBFB;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 20px;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+}
+.verify:hover{
+  background-color: #FBFBFB;
+  color: #03045e;
+  border: solid 2px #03045e;
+}
+.verify:disabled{
+  background-color: #344b71;
+}
+
+.animation2{
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+.animationsize2{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.resend p{
+  color: #03045e;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+
+
+/* Forgot Pin */
+.forgotPin{
+  background-color: #FBFBFB;
+  height: 100vh;
+  width: 100wv;
+}
+.forgotPinCard{
+  width: 50%;
+  height: 80%;
+  margin: auto;
+  background-color: #FBFBFB;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.forgotPinText{
+  width: 80%;
+  margin-bottom: 20px;
+  margin: auto;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.forgotPinText h3{
+  padding-top: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #03045e;
+}
+.forgotPinText p{
+  color: rgba(5,5,5,0.7);
+}
+.securityQuestion{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #000000;
+  font-size: 16px;
+  padding-top: 20px;
+}
+.securityQuestion p{
+  margin-bottom: 10px;
+}
+.securityQuestionInput{
+  width: 328px;
+  height: 48px;
+}
+
+/* Verification with ID */
+.VerificationwithID{
+  background-color: #FBFBFB;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.VerificationwithIDcard{
+  width: 50%;
+  height: 80%;
+  margin: auto;
+  background-color: #FBFBFB;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.VerificationwithIDtxt{
+  height: auto;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.VerificationwithIDtxt h3{
+  padding-top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #03045e;
+  margin-left: 3rem;
+}
+.VerificationwithIDtxt p{
+  font-size: 16px;
+  margin-left: 3rem;
+  color: rgba(5,5,5,0.7);
+}
+.VerificationwithIDinput{
+  height: auto;
+  margin-left: 3rem;
+}
+.IdNumberInput{
+  width: 328px;
+  height: 48px;
+}
+
+/* Create New Pin (Recover Pin) */
+.CreateNewPin{
+  background-color: #FBFBFB;
+  height: 100vh;
+  width: 100vw;
+}
+.CreateNewPinCard{
+  width: 50%;
+  height: 80%;
+  background-color: #FBFBFB;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.inputtext{
+  width: 328px;
+  margin: auto;
+  padding-top: 50px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #03045e;
+  font-size: 24px;
+  font-weight: bold;
+}
+.CreateNewPinInput{
+  width: 328px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.confirmPinInput{
+  width: 328px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.newPinfield{
+  width: 328px;
+}
+
+.confirmBtn{
+  position: relative;
+  width: 328px;
+  height: 48px;
+  margin: auto;
+}
+.confirmBtn input{
+  background-color: #03045e;
+  width: 100%;
+  height: 48px;
+  color: #FBFBFB;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.confirmBtn input:disabled{
+  background-color: #344b71;
+}
+
+/* Create Pin */
+.CreatePin{
+  background-color: #FBFBFB;
+  height: 100vh;
+  width: 100vw;
+}
+.CreatePinCard{
+  width: 50%;
+  height: 80%;
+  background-color: #FBFBFB;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.CreatePinInput{
+  width: 328px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.confirmpinInput{
+  width: 328px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.newPinfield{
+  width: 328px;
+}
+
+.confirmBtn{
+  position: relative;
+  width: 328px;
+  height: 48px;
+  margin: auto;
+}
+.confirmBtn input{
+  background-color: #03045e;
+  width: 100%;
+  height: 48px;
+  color: #FBFBFB;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.confirmBtn input:disabled{
+  background-color: #344b71;
+}
+
+
+
+
+
+
+
+/* Mobile View */
+@media screen and (max-width: 600px) and (min-width: 280px){
+  body{
+    overflow-x: hidden;
+  }
+
+ /* Logo */
+ .logoBox{
+  width: 100%;
+  height: 10vh;
+}
+.logoBlue{
+  display: flex;
+}
+.logoBlue img{
+  transform: scale(0.9);
+}
+.logoBlue p{
+  padding-top: 20px;
+  color: #03045e;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+ /* Mobile Navigation */
+ .navlogo{
+  height: 50px;
+  width: 155px;
+}
+.navlogo img{
+  width: 100%;
+  height: 100%;
+  margin-left: 1rem;
+}
+ .nav-toggler{
+  display: block;
+  margin-right: 2rem;
+  color: #03045e;
+  cursor: pointer;
+ }
+ .navlinks{
+  position: absolute;
+  top: 10vh;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: auto;
+  width: 100%;
+  background-color: #FBFBFB;
+  text-align: center;
+ }
+ .infolinks{
+  width: 100%;
+  text-align: center;
+ }
+ .infolinks ul{
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+ }
+ .infolinks ul li{
+  margin-bottom: 5px;
+  height: 40px;
+  border-top: 1px solid rgba(5,5,5,0.3);
+ }
+ .infolink p{
+  width: 100px;
+  margin: auto;
+  padding-top: 10px;
+ }
+ .nav-links{
+  width: 100%;
+  height: 40%;
+  text-align: center;
+  border-top: rgba(5,5,5,0.3) 1px solid;
+ }
+ .nav-links ul{
+  display: flex;
+  flex-direction: column;
+  border-bottom: rgba(5,5,5,0.3) 1px solid;
+  margin-bottom: 0;
+ }
+ .nav-links ul li{
+  margin-bottom: 5px;
+  height: 40px;
+  border-top: 1px solid rgba(5,5,5,0.3);
+ }
+ .loginlink p{
+  width: 100px;
+  margin: auto;
+  padding-top: 10px;
+ }
+ .signuplink p{
+  width: 100px;
+  margin: auto;
+  padding-top: 10px;
+ }
+ 
+ /* Getting Started Page */
+ .gettingStarted{
+  max-width: 600px;
+}
+.gettingStartedText{
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: auto;
+}
+.welcome{
+  width: 70%;
+  height: auto;
+}
+.welcome p{
+  font-size: 30px;
+}
+.line{
+  width: 30%;
+  margin-top: 10px;
+}
+.getstartedbtn{
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  font-size: 14px;
+  font-weight: 700;
+}
+.getstartedlink{
+  position: absolute;
+  margin: auto;
+  color: #FBFBFB;
+  text-decoration: none;
+  text-align: center;
+  left: 0;
+  top: 30;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  padding-top: 12px;
+}
+.getstartedbtn:hover{
+  background-color: #FBFBFB;
+  color: #03045e;
+  text-decoration: none;
+}
+.getstartedbtn:hover .getstartedlink{
+  color: #03045e;
+}
+
+/* Signup Mobile */
+.signup{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: scroll;
+}
+.banner{
+  display: none;
+}
+.header-mobile{
+  display: block;
+  background-color: #FBFBFB;
+  height: 10vh;
+  text-align: left;
+}
+.mobilelogo{
+  height: 50px;
+  width: 155px;
+  margin-left: 1rem;
+}
+.mobilelogo img{
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.header-mobile p{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #03045e;
+}
+.signup-form{
+  width: 100%;
+  margin-bottom: 30px;
+}
+.signup-formtxt p{
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+/* Security Questions */
+.SecurityQuestions{
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.header-mobile{
+  height: auto;
+}
+.header-mobile p{
+  text-align: center;
+}
+.Questions-form{
+  width: 80%;
+  margin: auto;
+}
+.continuebtn2{
+  height: 100px;
+  margin-top: 20px;
+}
+.continuebtn2 input{
+  height: 48px;
+  margin-bottom: 20px;
+}
+
+/* Login Page */
+.logincard{
+  width: 100vw;
+  box-shadow: none;
+  border-radius: 0px;
+  margin-top: 0;
+}
+.PinInput{
+  width: 328px;
+  height: auto;
+  margin: auto;
+  margin-top: 10px;
+}
+.avatar{
+  height: auto;
+}
+.avatar p{
+  width: auto;
+}
+
+/* Verification Page */
+.verificationcard{
+  width: 100%;
+  box-shadow: none;
+  border-radius: 0;
+  margin-top: 5px;
+}
+.verification-info{
+  display: flex;
+  flex-direction: column;
+}
+.Verificationcode{
+  width: 100%;
+  height: 20vh;
+}
+.Verificationcode h3{
+  margin-top: 20px;
+  font-size: 30px;
+}
+.Verificationcode p{
+  font-size: 14px;
+}
+.lottie-animation{
+  display: none;
+}
+.lottie-animation-mobile{
+  display: block;
+  height: 40vh;
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+}
+.animation-mobile{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.animationsize-mobile{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.sendCode{
+  margin-top: 55%;
+}
+
+/* Enter Verification Code  */
+.EnterVerificationcodeCard{
+  height: 100%;
+  width: 100%;
+  box-shadow: none;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.EnterVerificationcode{
+  width: 100%;
+}
+.EnterVerificationcode h3{
+  margin-top: 20px;
+  font-size: 25px;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+.EnterVerificationcode p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+.verificationcodeInput{
+  width: 328px;
+  margin: auto;
+  padding-top: 10px;
+}
+.verificationcodeInputFields{
+  width: 190px;
+  margin: auto;
+}
+.verify{
+  width: 60%;
+  margin: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+/* Forgot Pin */
+.forgotPinCard{
+  width: 100%;
+  height: 80%;
+  margin: auto;
+  background-color: #FBFBFB;
+  border-radius: 0;
+  box-shadow: none;
+}
+.forgotPinText h3{
+  padding-top: 10px;
+}
+
+/* Verification With ID */
+.VerificationwithIDcard{
+  width: 100%;
+  height: 80%;
+  margin: auto;
+  background-color: #FBFBFB;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Create New Pin */
+.CreateNewPinCard{
+  width: 100%;
+  height: 80%;
+  background-color: #FBFBFB;
+  margin: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Create Pin */
+.CreatePinCard{
+  width: 100%;
+  height: 80%;
+  background-color: #FBFBFB;
+  margin: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+}
+
+
+
+
+/* Tablet */
+@media screen and (max-width: 1024px) and (min-width: 600px){
+  body{
+   overflow: hidden;
+  }
+
+  /* Logo */
+  .logoBox{
+    width: 100%;
+  }
+  .logoBlue{
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .logoBlue img{
+    transform: scale(0.9);
+  }
+  .logoBlue p{
+    padding-top: 20px;
+    color: #03045e;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+  }
+
+  /* Tablet Navigation */
+  .navlogo{
+    height: 50px;
+    width: 155px;
+  }
+  .navlogo img{
+    width: 100%;
+    height: 100%;
+    margin-left: 1rem;
+  }
+  .nav-toggler{
+    display: block;
+    margin-right: 1rem;
+    color: #03045e;
+    cursor: pointer;
+   }
+   .navlinks{
+    position: absolute;
+    top: 10vh;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    background-color: #FBFBFB;
+   }
+   .infolinks{
+    width: 100%;
+    text-align: center;
+   }
+   .infolinks ul{
+     display: flex;
+     flex-direction: column;
+   }
+   .infolinks ul li{
+    margin-bottom: 5px;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    border-top: 1px solid rgba(5,5,5,0.3);
+   }
+   .infolink p{
+    width: 30%;
+    padding-top: 15px;
+    margin: auto;
+   }
+   .infolink p:hover{
+    color: #03045e;
+   }
+   .nav-links{
+    width: 100%;
+    margin-top: 10px;
+    border-top: rgba(5,5,5,0.3) solid 1px;
+    text-align: center;
+   }
+   .nav-links ul{
+    display: flex;
+     flex-direction: column;
+     border-bottom: rgba(5,5,5,0.3) solid 1px;
+   }
+   .nav-links ul li{
+    margin-bottom: 5px;
+    height: 50px;
+    align-items: center;
+    border-top: 1px solid rgba(5,5,5,0.3);
+   }
+   .loginlink p{
+    width: 30%;
+    padding-top: 10px;
+    margin: auto;
+   }
+   .signuplink p{
+    width: 30%;
+    padding-top: 10px;
+    margin: auto;
+   }
+  
+   /* Getting Started. */
+   .gettingStarted{
+    max-width: 1024px;
+  }
+  .gettingStartedText{
+    top: 25%;
+    left: 15%;
+    width: 70%;
+    height: 50%;
+  }
+  .welcome{
+    width: 80%;
+    height: auto;
+  }
+  .welcome p{
+    font-size: 40px;
+  }
+  .line{
+    width: 30%;
+    margin-top: 10px;
+  }
+  .getstartedbtn{
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    justify-content: center;
+  }
+  .getstartedlink{
+    position: absolute;
+    margin: auto;
+    color: #FBFBFB;
+    text-decoration: none;
+    text-align: center;
+    left: 0;
+    top: 20;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    padding-top: 10px;
+  }
+  .getstartedbtn:hover{
+    background-color: #FBFBFB;
+    color: #03045e;
+    text-decoration: none;
+  }
+  .getstartedbtn:hover .getstartedlink{
+    color: #03045e;
+  }
+
+  /* Sign up Tablet */
+  .signup{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: scroll;
+  }
+  .banner{
+    display: none;
+  }
+  .header-mobile{
+    display: block;
+    background-color: #FBFBFB;
+  }
+  .mobilelogo{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10px;
+  }
+  .header-mobile p{
+    width: 80%;
+    margin: auto;
+    font-size: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #03045e;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .signup-form{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .signup-formtxt p{
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  /* Security Questions */
+.SecurityQuestions{
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.header-mobile p{
+  text-align: center;
+}
+.Questions-form{
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.continuebtn2{
+  margin-top: 20px;
+}
+.continuebtn2 input{
+  height: 48px;
+  margin-bottom: 20px;
+}
+
+/* Login page */
+
+.logincard{
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin-top: 0;
+}
+.PinInput{
+  width: 328px;
+  height: auto;
+  margin: auto;
+  margin-top: 30px;
+}
+.avatar{
+  height: auto;
+}
+.avatar p{
+  width: auto;
+}
+
+/* Verification Page */
+.verificationlogo{
+  height: 10vh;
+}
+.verificationcard{
+  width: 100%;
+  box-shadow: none;
+  border-radius: 0;
+  margin-top: 5px;
+}
+.verification-info{
+  display: flex;
+  flex-direction: column;
+}
+.Verificationcode{
+  width: 100%;
+  height: 20vh;
+  text-align: center;
+}
+.Verificationcode h3{
+  margin-top: 20px;
+  font-size: 30px;
+}
+.Verificationcode p{
+  font-size: 14px;
+}
+.lottie-animation{
+  display: none;
+}
+.lottie-animation-mobile{
+  display: block;
+  height: 50vh;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+.animation-mobile{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.animationsize-mobile{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Enter Verification Code  */
+.EnterVerificationcodeCard{
+  width: 100%;
+  height: auto;
+  box-shadow: none;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+.EnterVerificationcode{
+  width: 100%;
+}
+.EnterVerificationcode h3{
+  margin-top: 25px;
+  font-size: 30px;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+.EnterVerificationcode p{
+  margin-top: 10px;
+  font-size: 16px;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+.verificationcodeInput{
+  width: 328px;
+  margin: auto;
+  padding-top: 10px;
+}
+.verificationcodeInputFields{
+  width: 190px;
+  margin: auto;
+}
+.verify{
+  width: 40%;
+  margin: auto;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.resend{
+  padding-bottom: 30px;
+}
+
+/* Forgot Pin */
+.forgotPinCard{
+  width: 70%;
+  height: 80%;
+  margin: auto;
+  background-color: #FBFBFB;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+.forgotPinText h3{
+  padding-top: 30px;
+}
+
+/* Verification With ID */
+.VerificationwithIDcard{
+  width: 70%;
+  height: 80%;
+  margin: auto;
+  background-color: #FBFBFB;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+/* Create New Pin */
+.CreateNewPinCard{
+  width: 70%;
+  height: 80%;
+  background-color: #FBFBFB;
+  margin: auto;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+
+
+}
+
+
+
+
+
+

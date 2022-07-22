@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+
+/* Dashboard Sidebar */
+.sidebar{
+    position: fixed;
+    width: 10vw;
+    height: 100vh;
+    background-color: #03045E;
+    box-shadow: 10px 10px 30px #00000029;
+    overflow-y: auto;
+  }
+  .sidebarElements ul{
+    background-color: #03045E;
+    height: 90vh;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .sidebarElements ul li{
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    list-style: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+  }
+  .inactive{
+    color: #afaeae;
+    text-decoration: none;
+  }
+  .inactive .svgIcon{
+    fill: #afaeae;
+  }
+  .active{
+    color: #fbfbfb;
+    text-decoration: none;
+  }
+  .active .svgIcon{
+    fill: #fbfbfb;
+  }
+  .icon{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+
+/* Dashboard */
+.Dashboard{
+    background-color: #fbfbfb;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    overflow: hidden;
+    background-color: darkorchid;
+    
+}
+.dashboardContent{
+  width: 90vw;
+  height: 100vh;
+  position: absolute;
+  left: 10vw;
+  overflow-x: hidden;
+}
+.dashboardHeader{
+  height: 8%;
+  margin-top: 10px;
+  display: flex;
+}
+.user{
+  width: 40%;
+  margin-right: 10%;
+  margin-left: 20px;
+  display: flex;
+}
+.avatar{
+  height: 40px;
+  width: 40px;
+  margin-right: 15px;
+}
+.name{
+  display: flex;
+  align-items: center;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.name p{
+  margin-right: 8px;
+}
+.greeting{
+  color: #707070;
+  font-size: 16px;
+}
+.user-name{
+  color: #03045E;
+  font-weight: bold;
+  font-size: 18px;
+}
+.headerIcons{
+  width: 30%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchIcon{
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+  color: #03045E;
+}
+.notificationIcon{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.months{
+  width: 100%;
+  height: 10%;
+  margin-top: 10px;
+}
+.months ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  align-items: center;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.inactiveMonth{
+  list-style: none;
+  background-color: #E4E4E4;
+  width: 80px;
+  height: 25px;
+  text-align: center;
+  border-radius: 15px;
+  color: #000000;
+}
+.activeMonth{
+  list-style: none;
+  background-color: #03045E;
+  width: 80px;
+  height: 25px;
+  text-align: center;
+  border-radius: 15px;
+  color: #fbfbfb;
+}
+
+.months ul li p{
+  padding-top: 1px;
+  height: 100%;
+  width: 80px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.months ul li :hover{
+  background-color: #03045E;
+  color: #fbfbfb;
+}
+.transactions{
+  width: 100%;
+  height: 16vh;
+  margin-top: 20px;
+}
+.selectTransactions{
+  height: 40px;
+  width: 180px;
+  margin: auto;
+}
+.selectTransactions select{
+  /* margin-top: 5px; */
+  width: 100%;
+  height: 30px;
+  background-color: #fbfbfb;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #6F6F6F;
+  outline: none;
+  border: none;
+}
+.transactionsAmount{
+  width: 40%;
+  margin: auto;
+}
+.path{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.pathSvg{
+  position: absolute;
+  width: 100%;
+  margin: auto;
+}
+.amount{
+  position: absolute;
+  top: 5px;
+  left: 40%;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #000000;
+  font-weight: 700;
+  font-size: 24px;
+}
+.animation{
+  width: 300px;
+  height: 300px;
+}
+.importFile{
+  width: 70%;
+  height: 20vh;
+  margin: auto;
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #000000;
+  padding-bottom: 30px;
+}
+.importFile input{
+  width: 300px;
+  height: 50px;
+  margin-top: 20px;
+  background-color: #03045E;
+  color: #fbfbfb;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.importFile input:hover{
+  background-color: #fbfbfb;
+  border: 2px solid #03045E;
+  color: #03045E;
+}
+.addfile{
+  width: 48px;
+  height: 48px;
+  margin-top: 10px;
+  color: #03045E;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.addBtn{
+  cursor: pointer;
+  height: 48px;
+  width: 48px;
+}
+
+/* Consent Pop up window */
+.consent{
+  position: absolute;
+  background-color: rgba(3,4,94, 0.5);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  z-index: 1;
+}
+.close{
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.closeIcon{
+  color: #fbfbfb;
+  position: absolute;
+  top: 5px;
+  left: 90vw;
+  height: 40px;
+  width: 40px;
+}
+.consentPopupWindow{
+  width: 50%;
+  height: 110vh;
+  background-color: #fbfbfb;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.consentPopupWindow h3{
+  margin-left: 1rem;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+.consentPopupWindow h4{
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.consentPopupWindow p{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 10px;
+  color: #03045E;
+}
+.privacypolicylink{
+  color: #03045E;
+  font-weight: bold;
+}
+.consentPopupWindow input{
+  width: 38%;
+  height: 50px;
+  margin-left: 31%;
+  margin-top: 20px;
+  background-color: #03045E;
+  color: #fbfbfb;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.consentPopupWindow input:hover{
+  background-color: #fbfbfb;
+  border: 2px solid #03045E;
+  color: #03045E;
+}
+.checkbox{
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Expenses */
+.Expenses{
+  background-color: darkkhaki;
+  display: flex;
+}
+
+/* Budget */
+.Budget{
+  background-color: darkkhaki;
+  display: flex;
+}
+
+/* History */
+.History{
+  background-color: darkkhaki;
+  display: flex;
+}
+

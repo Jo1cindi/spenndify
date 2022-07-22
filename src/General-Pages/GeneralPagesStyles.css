@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+
+/* About page */
+
+.AboutPage{
+    width: 100vw;
+    height: auto;
+    background-color: pink;
+}
+.AboutBanner{
+    background-color: brown;
+    width: 100%;
+    height: 65vh;
+    display: flex;
+}
+.BannerTxt{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: #fbfbfb;
+    border-top: 2px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+.BannerTxt h3{
+    position: absolute;
+    width: 60%;
+    height: 30%;
+    left: 20%;
+    top: 25%;
+    color: #03045e;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+.BannerImg{
+    width: 50%;
+    height: 100%;
+}
+.BannerImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.AboutTxt{
+    background-color: #fbfbfb;
+    width: 100vw;
+    height: 30vh;
+    overflow: hidden;
+}
