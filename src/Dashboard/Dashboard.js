@@ -10,6 +10,9 @@ import Animation from "../images/fileuploadanimation.json";
 import { IoAddCircleSharp, IoCloseSharp } from "react-icons/io5";
 import {Link} from 'react-router-dom'
 import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
+import { fadeInUp } from 'react-animations'
+import { StyleSheet} from 'aphrodite';
+
 
 const Dashboard = () => {
   //Getting user data from local storage
@@ -74,14 +77,20 @@ const Dashboard = () => {
     setOpenConsent(false)
   }
 
+  //Adding styles to allow fade-in up animation for the consent clause
+ const Styles = StyleSheet.create({
+   fadeInUp : {
+    animationName: fadeInUp,
+    animationDuration: '1s'
+   }
+ })
   
- 
 
   return (
     <div className="Dashboard">
        {
             (openConsent &&(
-              <div className="consent">
+              <div className="consent" style={Styles.fadeInUp}>
                 <div className="close">
                 <IoCloseSharp className="closeIcon" onClick={closeConsent}/>
                 </div>
