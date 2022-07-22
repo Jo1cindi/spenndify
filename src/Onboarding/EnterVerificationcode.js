@@ -4,7 +4,7 @@ import Lottie from "react-lottie-player";
 import Animation from "../images/Animation.json";
 import OTPInput from "otp-input-react";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const EnterVerificationcode = () => {
   const [verificationCode, setVerificationCode] = useState("");  //Verification code input values
@@ -22,7 +22,7 @@ const EnterVerificationcode = () => {
   }, [counter]);
 
   //navigation to create pin page
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
   //Function to verify account
   const handleClick = (e) => {
@@ -45,8 +45,8 @@ const EnterVerificationcode = () => {
         if(response.data === "Wrong OTP try again"){
           verificationError = "Wrong verification code please try again"
         }
-        //navigation to create pin page
-        // navigate("/CreatePin");
+        // navigation to create pin page
+        navigate("/CreatePin");
       })
       .catch((error) => {
         if (error.response.data) {

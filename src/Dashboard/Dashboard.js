@@ -9,9 +9,8 @@ import Lottie from "react-lottie-player";
 import Animation from "../images/fileuploadanimation.json";
 import { IoAddCircleSharp, IoCloseSharp } from "react-icons/io5";
 import {Link} from 'react-router-dom'
-import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
-import { fadeInUp } from 'react-animations'
-import { StyleSheet} from 'aphrodite';
+import { FormGroup, FormControlLabel, Checkbox} from "@mui/material";
+
 
 
 const Dashboard = () => {
@@ -77,25 +76,21 @@ const Dashboard = () => {
     setOpenConsent(false)
   }
 
-  //Adding styles to allow fade-in up animation for the consent clause
- const Styles = StyleSheet.create({
-   fadeInUp : {
-    animationName: fadeInUp,
-    animationDuration: '1s'
-   }
- })
-  
+  //Assigning value to consent checkbox
+  const [checkConsent, setCheckConsent] = useState("");
+ 
+
 
   return (
     <div className="Dashboard">
        {
             (openConsent &&(
-              <div className="consent" style={Styles.fadeInUp}>
+              <div className="consent">
                 <div className="close">
                 <IoCloseSharp className="closeIcon" onClick={closeConsent}/>
                 </div>
                 <div className="consentPopupWindow">
-                  <div classNatme="popuptitle">
+                  <div className="popuptitle">
                     <h3>Read SMS permission</h3>
                     <h4>Financial transaction message logs(SMS)</h4>
                   </div>
@@ -108,10 +103,11 @@ const Dashboard = () => {
                     <p>Please read full <Link to="" className="privacypolicylink">Data privacy policy</Link></p>
                   </div>
                   {/* Accept terms checkbox */}
-                  <FormGroup>
-                    <FormControlLabel  control={<Checkbox sx={{color: "#03045E", '&.Mui-checked':{color: "#03045E"}, marginLeft: "1rem"}}/>} label="I consent to giving spenndify permission to read my m-pesa and bank messages" sx={{color: "#03045E" }}></FormControlLabel>
+                  <FormGroup className="checkbox">
+                    <FormControlLabel  control={<Checkbox sx={{color: "#03045E", '&.Mui-checked':{color: "#03045E"}, marginLeft: "1rem", '&.Mui-label': {fontSize: "14"}}} value={checkConsent} onChange={(e)=> setCheckConsent(e.target.value)}/>} 
+                    label="I consent to giving spenndify permission to read my m-pesa and bank messages" sx={{color: "#03045E", marginTop: "1rem"}}></FormControlLabel>
                   </FormGroup>
-                  <input type="submit" value="CONTINUE"/>
+                  <input type="submit" value="CONTINUE" disabled={!checkConsent}/>
                 </div>
               </div>
             ))
