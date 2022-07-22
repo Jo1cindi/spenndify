@@ -48,7 +48,7 @@ const Navigation = () => {
       )
      }
      <div >
-          <AiIcons.AiOutlineBars fontSize="30px" className="nav-toggler" onClick={toggleNav}/>
+          <AiIcons.AiOutlineMenu fontSize="30px" className="nav-toggler" onClick={toggleNav}/>
     </div>
     </div>
   )

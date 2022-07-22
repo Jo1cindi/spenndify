@@ -963,6 +963,17 @@ body{
   width: 100%;
   background-color: #FBFBFB;
   text-align: center;
+  animation-duration: 2s;
+  animation-name: fadeinup;
+  transition: all 3s ease-in;
+ }
+ @keyframes fadeinup{
+   from{
+     transform: translateY(0%);
+   }
+   to{
+    transform: translateY(100%);
+   }
  }
  .infolinks{
   width: 100%;
