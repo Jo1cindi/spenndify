@@ -104,10 +104,10 @@ const Dashboard = () => {
                   </div>
                   {/* Accept terms checkbox */}
                   <FormGroup className="checkbox">
-                    <FormControlLabel  control={<Checkbox sx={{color: "#03045E", '&.Mui-checked':{color: "#03045E"}, marginLeft: "1rem", '&.Mui-label': {fontSize: "14"}}} value={checkConsent} onChange={(e)=> setCheckConsent(e.target.value)}/>} 
+                    <FormControlLabel  control={<Checkbox sx={{color: "#03045E", '&.Mui-checked':{color: "#03045E"}, marginLeft: "1rem", '&.Mui-label': {fontSize: "14"}}} checked={checkConsent} onChange={(e)=> setCheckConsent(e.target.value)}/>} 
                     label="I consent to giving spenndify permission to read my m-pesa and bank messages" sx={{color: "#03045E", marginTop: "1rem"}}></FormControlLabel>
                   </FormGroup>
-                  <input type="submit" value="CONTINUE" disabled={!checkConsent}/>
+                  <input type="submit" value="CONTINUE"/>
                 </div>
               </div>
             ))
