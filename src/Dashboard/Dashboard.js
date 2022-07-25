@@ -8,17 +8,16 @@ import * as AiIcons from "react-icons/ai";
 import Lottie from "react-lottie-player";
 import Animation from "../images/fileuploadanimation.json";
 import { IoAddCircleSharp, IoCloseSharp } from "react-icons/io5";
-import {Link} from 'react-router-dom'
-import { FormGroup, FormControlLabel, Checkbox} from "@mui/material";
-
-
+import { Link } from "react-router-dom";
+import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
+import Carousel from "react-material-ui-carousel";
 
 const Dashboard = () => {
   //Getting user data from local storage
-  const signupData = JSON.parse(localStorage.getItem('userData'));
-  
+  const signupData = JSON.parse(localStorage.getItem("userData"));
+
   //Getting user's name from the user data
-  const name  = signupData.firstName +' '+ signupData.lastName;
+  const name = signupData.firstName + " " + signupData.lastName;
 
   //Getting time to display greeting at the appropriate time
   let date = new Date();
@@ -66,52 +65,91 @@ const Dashboard = () => {
   const transactionsAmount = "00.00";
 
   //Opening and closing the consent pop up window
-  const [openConsent, setOpenConsent] = useState('')
-  const toggleConsent  = () =>{
-    setOpenConsent(!openConsent)
-  }
+  const [openConsent, setOpenConsent] = useState("");
+  const toggleConsent = () => {
+    setOpenConsent(!openConsent);
+  };
 
   //Function to close consent pop up window
-  const closeConsent = () =>{
-    setOpenConsent(false)
-  }
+  const closeConsent = () => {
+    setOpenConsent(false);
+  };
 
   //Assigning value to consent checkbox
   const [checkConsent, setCheckConsent] = useState("");
- 
-
 
   return (
     <div className="Dashboard">
-       {
-            (openConsent &&(
-              <div className="consent">
-                <div className="close">
-                <IoCloseSharp className="closeIcon" onClick={closeConsent}/>
-                </div>
-                <div className="consentPopupWindow">
-                  <div className="popuptitle">
-                    <h3>Read SMS permission</h3>
-                    <h4>Financial transaction message logs(SMS)</h4>
-                  </div>
-                  <div className="consentContent">
-                    <p>We need you to allow Spenndify to read and upload select transaction message logs from your mobile device, you will access well formatted and organised important financial transaction informations and related analysis.</p>
-                    <p>With your permission, we will only read transactions notification messages originating from Mpesa and any bank within Kenya.</p>
-                    <p>Upon your consent copies of your messages also serve as secondary back-up and would still be available if you changed your device and re-authenticated your account details on a new device with a new installation of the app.</p>
-                    <p>You may choose to delete such messages from our servers yourself, through the app at any time, or send us a request to delete such information using the contact details provided in our data privacy policy.</p>
-                    <p>We will not share or disclose your financial transactions message logs to third parties without your consent or for any purposes outlined in this privacy policy and/ our terms and conditions. Please read full Data privacy policy</p>
-                    <p>Please read full <Link to="" className="privacypolicylink">Data privacy policy</Link></p>
-                  </div>
-                  {/* Accept terms checkbox */}
-                  <FormGroup className="checkbox">
-                    <FormControlLabel  control={<Checkbox sx={{color: "#03045E", '&.Mui-checked':{color: "#03045E"}, marginLeft: "1rem", '&.Mui-label': {fontSize: "14"}}} checked={checkConsent} onChange={(e)=> setCheckConsent(e.target.checked)}/>} 
-                    label="I consent to giving spenndify permission to read my m-pesa and bank messages" sx={{color: "#03045E", marginTop: "1rem"}}></FormControlLabel>
-                  </FormGroup>
-                  <input type="submit" value="CONTINUE"/>
-                </div>
-              </div>
-            ))
-          }
+      {openConsent && (
+        <div className="consent">
+          <div className="close">
+            <IoCloseSharp className="closeIcon" onClick={closeConsent} />
+          </div>
+          <div className="consentPopupWindow">
+            <div className="popuptitle">
+              <h3>Read SMS permission</h3>
+              <h4>Financial transaction message logs(SMS)</h4>
+            </div>
+            <div className="consentContent">
+              <p>
+                We need you to allow Spenndify to read and upload select
+                transaction message logs from your mobile device, you will
+                access well formatted and organised important financial
+                transaction informations and related analysis.
+              </p>
+              <p>
+                With your permission, we will only read transactions
+                notification messages originating from Mpesa and any bank within
+                Kenya.
+              </p>
+              <p>
+                Upon your consent copies of your messages also serve as
+                secondary back-up and would still be available if you changed
+                your device and re-authenticated your account details on a new
+                device with a new installation of the app.
+              </p>
+              <p>
+                You may choose to delete such messages from our servers
+                yourself, through the app at any time, or send us a request to
+                delete such information using the contact details provided in
+                our data privacy policy.
+              </p>
+              <p>
+                We will not share or disclose your financial transactions
+                message logs to third parties without your consent or for any
+                purposes outlined in this privacy policy and/ our terms and
+                conditions. Please read full Data privacy policy
+              </p>
+              <p>
+                Please read full{" "}
+                <Link to="" className="privacypolicylink">
+                  Data privacy policy
+                </Link>
+              </p>
+            </div>
+            {/* Accept terms checkbox */}
+            <FormGroup className="checkbox">
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#03045E",
+                      "&.Mui-checked": { color: "#03045E" },
+                      marginLeft: "1rem",
+                      "&.Mui-label": { fontSize: "14" },
+                    }}
+                    checked={checkConsent}
+                    onChange={(e) => setCheckConsent(e.target.checked)}
+                  />
+                }
+                label="I consent to giving spenndify permission to read my m-pesa and bank messages"
+                sx={{ color: "#03045E", marginTop: "1rem" }}
+              ></FormControlLabel>
+            </FormGroup>
+            <input type="submit" value="CONTINUE" />
+          </div>
+        </div>
+      )}
       <Sidebar />
       <div className="dashboardContent">
         {/* Header Containing Name , Avatar, Search Icon and Notification Icon */}
@@ -149,6 +187,29 @@ const Dashboard = () => {
           </ul>
         </div>
 
+        {/* Displaying Months for the mobile and Tablet screens */}
+        <div className="months-mobile">
+          <ul>
+            <Carousel className="monthsCarousel">
+              {months.map((month, index) => (
+                <li>
+                  <div
+                    key={index}
+                    className={
+                      active === month
+                        ? "activeMonth-mobile"
+                        : "inactiveMonth-mobile"
+                    }
+                    onClick={toggleMonth}
+                  >
+                    <p>{month}</p>
+                  </div>
+                </li>
+              ))}
+            </Carousel>
+          </ul>
+        </div>
+
         {/* Displaying Transactions */}
         <div className="transactions">
           <div className="selectTransactions">
@@ -170,17 +231,20 @@ const Dashboard = () => {
         </div>
 
         {/* File upload animation */}
-        
-          <Lottie loop animationData={Animation} play className="animation" />
-         <div className="importFile">
-          <p>Kindly import your Mpesa messages and Bank statements to view your transactions analysis</p>
-          <input type="submit" value="IMPORT" onClick={toggleConsent}/>
-         </div>
 
-         {/* Add Files Icon */}
-         <div className="addfile">
-         <IoAddCircleSharp className="addBtn"/>
-         </div>
+        <Lottie loop animationData={Animation} play className="animation" />
+        <div className="importFile">
+          <p>
+            Kindly import your Mpesa messages and Bank statements to view your
+            transactions analysis
+          </p>
+          <input type="submit" value="IMPORT" onClick={toggleConsent} />
+        </div>
+
+        {/* Add Files Icon */}
+        <div className="addfile">
+          <IoAddCircleSharp className="addBtn" />
+        </div>
       </div>
     </div>
   );
