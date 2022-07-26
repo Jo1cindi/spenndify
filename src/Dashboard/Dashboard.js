@@ -10,7 +10,7 @@ import Animation from "../images/fileuploadanimation.json";
 import { IoAddCircleSharp, IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FormGroup, FormControlLabel, Checkbox,  } from "@mui/material";
-
+import SidebarMobile from "../Components/SidebarMobile";
 
 
 
@@ -154,8 +154,10 @@ const Dashboard = () => {
           </div>
         </div>
       )}
+      <div className="dashboardElements">
       <Sidebar />
       <div className="dashboardContent">
+        <SidebarMobile/>
         {/* Header Containing Name , Avatar, Search Icon and Notification Icon */}
         <div className="dashboardHeader">
           {/* User's name and avatar */}
@@ -249,6 +251,7 @@ const Dashboard = () => {
         <div className="addfile">
           <IoAddCircleSharp className="addBtn" />
         </div>
+      </div>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   //Setting default value
-
+  
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -17,6 +17,8 @@ const Signup = () => {
   });
 
   const handleChange = (e) => {
+    
+    
     setUser({
       ...user,
       [e.target.name]: e.target.value,
@@ -39,14 +41,16 @@ const Signup = () => {
     emailError = "";
   }
 
-  // navigation;
+  // // navigation;
   const navigation = useNavigate();
 
   //Phone number where otp is sent
   const userPhoneNumber = user.telNumber;
 
   //Function to send post request
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     const userData = {
       firstName: user.firstName,
       lastName: user.lastName,

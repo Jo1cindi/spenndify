@@ -21,11 +21,11 @@ const AccountVerification = () => {
   //Function to send verification code
   const handleClick = () => {
     const userPhoneNumber = {
-      phoneNumber: phoneNumber,
+      phone: phoneNumber,
     };
 
     //sending post request
-    const url = "https://login-herokuu.herokuapp.com/Otp/Manenos/send";
+    const url = "https://spenndify-expenses-app.herokuapp.com/spendy/user/send/otp";
 
     axios({
       method: "post",
