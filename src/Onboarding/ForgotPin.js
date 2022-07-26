@@ -18,6 +18,23 @@ const ForgotPin = () => {
       window.location.href = "/VerificationwithID";
     }, 4000);
   }
+  
+ 
+  //Getting user data from local storage
+  const signupData = JSON.parse(localStorage.getItem("userData"));
+
+  
+  //Getting answer
+  const correctAnswer= signupData.questionOne
+
+  //Error if answer is incorrect
+  // let error = ""
+  
+  if (answer === correctAnswer){
+    window.location.href = "/VerificationwithID";
+  }else{
+    // error = "Please enter the correct answer"
+  }
 
   return (
     <div className="forgotPin">

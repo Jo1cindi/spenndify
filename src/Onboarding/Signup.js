@@ -11,7 +11,7 @@ const Signup = () => {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
-    telNumber: "",
+    phone: "",
     idNumber: "",
     email: "",
   });
@@ -23,8 +23,8 @@ const Signup = () => {
     });
   };
 
-  //User exists error
-  let error = "";
+  // //User exists error
+  // let error = "";
 
   //Email Validation
   let emailError = "";
@@ -50,7 +50,7 @@ const Signup = () => {
     const userData = {
       firstName: user.firstName,
       lastName: user.lastName,
-      telNumber: user.telNumber,
+      phone: user.telNumber,
       idNumber: user.idNumber,
       email: user.email,
     };
@@ -64,13 +64,13 @@ const Signup = () => {
   };
 
   //Getting phone number from local storage to prevent user from sigining up more than once
-  const phoneNo = JSON.parse(localStorage.getItem("userPhoneNumber"));
+  // const phoneNo = JSON.parse(localStorage.getItem("userPhoneNumber"));
 
-  if (phoneNo === user.telNumber) {
-    error = "User already exists";
-  } else {
-    error = "";
-  }
+  // if (phoneNo === user.telNumber) {
+  //   error = "User already exists";
+  // } else {
+  //   error = "";
+  // }
 
   return (
     <div className="signup">
@@ -131,7 +131,7 @@ const Signup = () => {
             />
             <TextField
               label="Phone Number"
-              name="telNumber"
+              name="phone"
               margin="normal"
               type="tel"
               className="signupinput"
@@ -165,10 +165,10 @@ const Signup = () => {
                 disabled={
                   !user.firstName ||
                   !user.lastName ||
-                  !user.telNumber ||
+                  !user.phone ||
                   !user.email ||
                   !user.idNumber ||
-                  error ||
+                  // error ||
                   regex.test(user.email) === false
                 }
               />
@@ -181,7 +181,7 @@ const Signup = () => {
             </div>
           </form>
           <div className="signupError">
-            <p>{error}</p>
+            {/* <p>{error}</p> */}
           </div>
         </div>
       </div>

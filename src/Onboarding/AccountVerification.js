@@ -10,7 +10,7 @@ const AccountVerification = () => {
   const navigate = useNavigate();
 
   //Getting phone number from local storage
-  const phoneNumber = JSON.parse(localStorage.getItem("userPhoneNumber"));
+  const phoneNumber = JSON.parse(localStorage.getItem("email"));
 
   //Hiding the middle digits of phone number
   const hiddenPhoneNumber = phoneNumber.replace(
@@ -41,7 +41,7 @@ const AccountVerification = () => {
           console.log(error.response.data);
         }
       });
-    navigate("/EnterVerificationcode");
+    navigate("/EnterVerificationCode2");
   };
 
   return (

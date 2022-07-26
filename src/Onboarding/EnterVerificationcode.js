@@ -71,7 +71,7 @@ const EnterVerificationcode = () => {
     };
 
     //sending post request
-    const url = "https://login-herokuu.herokuapp.com/Otp/Manenos/send";
+    const url = "https://spenndify-expenses-app.herokuapp.com/spendy/user/verify/registration/otp";
 
     axios({
       method: "post",

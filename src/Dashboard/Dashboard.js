@@ -9,8 +9,10 @@ import Lottie from "react-lottie-player";
 import Animation from "../images/fileuploadanimation.json";
 import { IoAddCircleSharp, IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
-import Carousel from "react-material-ui-carousel";
+import { FormGroup, FormControlLabel, Checkbox,  } from "@mui/material";
+
+
+
 
 const Dashboard = () => {
   //Getting user data from local storage
@@ -77,6 +79,8 @@ const Dashboard = () => {
 
   //Assigning value to consent checkbox
   const [checkConsent, setCheckConsent] = useState("");
+
+  ;
 
   return (
     <div className="Dashboard">
@@ -189,25 +193,25 @@ const Dashboard = () => {
 
         {/* Displaying Months for the mobile and Tablet screens */}
         <div className="months-mobile">
-          <ul>
-            <Carousel className="monthsCarousel">
-              {months.map((month, index) => (
-                <li>
-                  <div
-                    key={index}
-                    className={
-                      active === month
-                        ? "activeMonth-mobile"
-                        : "inactiveMonth-mobile"
-                    }
-                    onClick={toggleMonth}
-                  >
-                    <p>{month}</p>
-                  </div>
-                </li>
-              ))}
-            </Carousel>
-          </ul>
+          
+              <ul>
+                {months.map((month, index) => (
+                  <li key={index}>
+                    <div
+                      key={index}
+                      className={
+                        active === month
+                          ? "activeMonth-mobile"
+                          : "inactiveMonth-mobile"
+                      }
+                      onClick={toggleMonth}
+                    >
+                      <p>{month}</p>
+                    </div>
+                  </li>
+                ))}
+              
+            </ul>
         </div>
 
         {/* Displaying Transactions */}

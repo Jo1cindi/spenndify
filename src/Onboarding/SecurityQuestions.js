@@ -44,9 +44,9 @@ const SecurityQuestions = () => {
   function handleClick(e) {
     e.preventDefault()
     const userAnswers = {
-      passion : answers.answer1,
-      petsName : answers.answer2,
-      favouriteColor : answers.answer3
+      questionOne : answers.answer1,
+      questionTwo : answers.answer2,
+      questionThree : answers.answer3
     }
 
     //Storing answers in local storage

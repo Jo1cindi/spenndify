@@ -13,17 +13,17 @@ const Login = () => {
   const [email, setEmail] = useState("");
 
   //Email Validation
-  // let error = "";
-  // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // if (regex.test(email) === false) {
-  //   error = "Please enter a valid email address";
-  // } else {
-  //   error = "Email is valid";
-  // }
+  let emailError = "";
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (regex.test(email) === false) {
+    emailError = "Please enter a valid email address";
+  } else {
+    emailError = "Email is valid";
+  }
 
-  // if (!email) {
-  //   error = "";
-  // }
+  if (!email) {
+    emailError = "";
+  }
 
   //navigation to Dashboard
   const navigation = useNavigate();
@@ -35,7 +35,7 @@ const Login = () => {
     e && e.preventDefault();
 
     //Post Request
-    const url = "https://login-herokuu.herokuapp.com/login";
+    const url = "https://spenndify-expenses-app.herokuapp.com/spendy/user/authenticate";
     const loginDetails = {
       username: email,
       password: pin,
@@ -94,13 +94,13 @@ const Login = () => {
               sx={{ marginBottom: 2 }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              // helperText={error}
-              // FormHelperTextProps={
-              //   regex.test(email) === false
-              //     ? { style: { color: "red" } }
-              //     : { style: { color: "green" } }
-              // }
-              // type="email"
+              helperText={emailError}
+              FormHelperTextProps={
+                regex.test(email) === false
+                  ? { style: { color: "red" } }
+                  : { style: { color: "green" } }
+              }
+              type="email"
               required
             />
             <InputLabel

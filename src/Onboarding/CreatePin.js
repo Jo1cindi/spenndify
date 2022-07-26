@@ -69,7 +69,7 @@ const CreatePin = () => {
    console.log(userDetails)
 
   //Post request
-  const url = "https://login-herokuu.herokuapp.com/user/registration";
+  const url = "https://spenndify-expenses-app.herokuapp.com/spendy/user/registration";
   
   e.preventDefault()
   axios({
