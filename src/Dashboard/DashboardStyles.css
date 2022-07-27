@@ -356,6 +356,7 @@
 .Expenses{
   background-color: darkkhaki;
   display: flex;
+  font-family: 'Nunito Sans', sans-serif;
 }
 .expensesContent{
   width: 90vw;
@@ -401,6 +402,142 @@
   margin-top: 10px;
   cursor: pointer;
 }
+.filterExpenses{
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  margin-top: 10px;
+}
+.toggleBtn{
+  width: 40%;
+  height: 80%;
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  display: flex;
+  border-radius: 30px;
+}
+
+.filterbyWeekly{
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  z-index: 99;
+  background-color: #03045E;
+  color: #fbfbfb;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.filterbyWeekly p{
+  position: absolute;
+  height: 20%;
+  top: 20%;
+  left: 40%;
+  font-size: 20px;
+}
+.inactiveFilterbyWeekly{
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: #E4E4E4;
+  color: #6F6F6F;
+  cursor: pointer;
+  border-radius: 30px;
+
+}
+.inactiveFilterbyWeekly p{
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  font-size: 20px;
+}
+.filterbyMonthly{
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  background-color: #03045E;
+  color: #fbfbfb;
+  text-align: right;
+  border-radius: 30px;
+  z-index: 99;
+  left: 30%;
+}
+.filterbyMonthly p{
+  position: absolute;
+  height: 20%;
+  top: 20%;
+  left: 40%;
+  font-size: 20px;
+}
+.inactiveFilterbyMonthly{
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  left: 60%;
+  background-color: #E4E4E4;
+  color: #6F6F6F;
+  cursor: pointer;
+  text-align: right;
+  border-radius: 30px;
+}
+.inactiveFilterbyMonthly p{
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  font-size: 20px;
+}
+.expenditurePieChart p{
+  margin-left: 3%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #03045E;
+}
+.piechartCard{
+  width: 70%;
+  height: 40vh;
+  margin-left: 3%;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+}
+.expenditureBargraph p{
+  margin-left: 3%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #03045E
+}
+.bargraphCard{
+  width: 70%;
+  height: 60vh;
+  margin-left: 3%;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+}
+.categoriesPieChart p{
+  margin-left: 3%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #03045E
+}
+.categoriesPiechartCard{
+  width: 70%;
+  height: 40vh;
+  margin-left: 3%;
+  background-color: #F7F7F7;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+
+
+
+
+
 
 /* Budget */
 .Budget{
@@ -431,10 +568,10 @@
     width: 100%;
   }
   .sidebarMobileElements{
-    background-color: #fbfbfb;
+    background-color: #03045E;
     width: 100%;
     height: 100%;
-    border-radius: 30px;
+    margin-bottom: 20px;
     box-shadow: 10px 10px 30px #00000029;
   }
   .sidebarMobileElements ul{
@@ -456,18 +593,18 @@
     height: 90%;
   }
   .inactive{
-    color: #6F6F6F;
+    color: #afaeae;
     text-decoration: none;
   }
   .inactive .svgIcon{
-    fill: #6F6F6F;
+    fill: #afaeae;
   }
   .active{
-    color: #03045E;
+    color: #fbfbfb;
     text-decoration: none;
   }
   .active .svgIcon{
-    fill: #03045E;
+    fill: #fbfbfb;
   }
  
   .dashboardContent{
@@ -551,6 +688,28 @@
     width: 90%;
     height: 140vh;
   }
+
+
+  /* Expenses */
+  .expensesContent{
+    width: 100%;
+    left: 0;
+  }
+  .expenseHeader{
+    margin-top: 20px;
+  }
+  .toggleBtn{
+    width: 70%
+  }
+  .piechartCard{
+    width: 90%;
+  }
+  .bargraphCard{
+    width: 90%;
+  }
+  .categoriesPiechartCard{
+    width: 90%;
+  }
   
 }
 
@@ -558,14 +717,32 @@
 /* Tablet */
 @media screen and (max-width: 1024px) and (min-width: 600px){
   .Dashboard{
-    background-color: darkgreen;
     width: 100%;
   }
   .sidebar{
-    width: 10%;
-  }
-  .sidebarElements ul li p{
     display: none;
+  }
+  .sidebarMobile{
+    display: block;
+    height: 10vh;
+    width: 100%;
+  }
+  .sidebarMobileElements{
+    background-color: #03045E;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 30px #00000029;
+  }
+  .sidebarMobileElements ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  .sidebarMobileElements ul li{
+    list-style: none;
+    padding-top: 2vh;
+    height: 40px;
+    width: 40px;
   }
   .svgIcon{
     width: 90%;
@@ -649,6 +826,27 @@
   .consentPopupWindow{
     width: 80%;
     height: 120vh;
+  }
+
+  /* Expenses */
+  .expensesContent{
+    width: 100%;
+    left: 0;
+  }
+  .expenseHeader{
+    margin-top: 20px;
+  }
+  .toggleBtn{
+    width: 80%;
+  }
+  .piechartCard{
+    width: 80%;
+  }
+  .bargraphCard{
+    width: 80%;
+  }
+  .categoriesPiechartCard{
+    width: 80%;
   }
   
 }
