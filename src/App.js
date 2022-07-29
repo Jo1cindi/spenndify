@@ -13,6 +13,7 @@ import CreateNewPin from "./Onboarding/CreateNewPin";
 import EnterVerificationcode from "./Onboarding/EnterVerificationcode";
 import EnterVerificationCode2 from "./Onboarding/EnterVerificationCode2";
 import Dashboard from "./Dashboard/Dashboard";
+import AddTransaction from "./Dashboard/AddTransaction";
 import Budget from "./Dashboard/Budget";
 import Expenses from "./Dashboard/Expenses";
 import History from "./Dashboard/History";
@@ -40,6 +41,7 @@ const Spendify = () => {
           <Route path="EnterVerificationcode" exact element={<EnterVerificationcode/>}></Route>
           <Route path="EnterVerificationCode2" exact element={<EnterVerificationCode2/>}></Route>
           <Route path="Dashboard" exact element={<Dashboard/>}></Route>
+          <Route path="AddTransaction" exact element={<AddTransaction/>}></Route>
           <Route path="Expenses" exact element={<Expenses/>}></Route>
           <Route path="Budget" exact element={<Budget/>}></Route>
           <Route path="History" exact element={<History/>}></Route>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "../Components/Sidebar";
 import SidebarMobile from "../Components/SidebarMobile";
 import { FiSettings } from "react-icons/fi";
+import AddTransactionButton from "../Components/AddTransactionButton";
 
 const Expenses = () => {
 
@@ -87,6 +88,7 @@ const Expenses = () => {
           <p>Spending Categories</p>
           <div className="categoriesPiechartCard"></div>
         </div>
+        <AddTransactionButton/>
       </div>
     </div>
   );

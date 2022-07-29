@@ -7,10 +7,11 @@ import { ReactComponent as Path } from "../images/Path.svg";
 import * as AiIcons from "react-icons/ai";
 import Lottie from "react-lottie-player";
 import Animation from "../images/fileuploadanimation.json";
-import { IoAddCircleSharp, IoCloseSharp } from "react-icons/io5";
+import {  IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FormGroup, FormControlLabel, Checkbox,  } from "@mui/material";
 import SidebarMobile from "../Components/SidebarMobile";
+import AddTransactionButton from "../Components/AddTransactionButton";
 
 
 
@@ -52,8 +53,11 @@ const Dashboard = () => {
     "December",
   ];
 
+  let monthIndex = (new Date().getMonth());
+  let monthName = months[monthIndex];
+
   //Setting active list Item(month) when clicked
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState(monthName);
   const toggleMonth = (e) => {
     setActive(e.target.innerText);
   };
@@ -248,9 +252,7 @@ const Dashboard = () => {
         </div>
 
         {/* Add Files Icon */}
-        <div className="addfile">
-          <IoAddCircleSharp className="addBtn" />
-        </div>
+       <AddTransactionButton/>
       </div>
       </div>
     </div>
