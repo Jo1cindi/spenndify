@@ -27,7 +27,7 @@ const EnterVerificationCode2 = () => {
   //Function to verify account
   const handleClick = () => {
     //Post Request
-    const url = "https://spenndify-expenses-app.herokuapp.com/spendy/user/verify/registration/otp";
+    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/verify/registration/otp";
     const otpCode = {
       tempOtp: verificationCode,
     };

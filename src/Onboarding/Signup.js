@@ -54,7 +54,7 @@ const Signup = () => {
     const userData = {
       firstName: user.firstName,
       lastName: user.lastName,
-      phone: user.telNumber,
+      phone: user.phone,
       idNumber: user.idNumber,
       email: user.email,
     };
@@ -139,7 +139,7 @@ const Signup = () => {
               margin="normal"
               type="tel"
               className="signupinput"
-              value={user.telNumber}
+              value={user.phone}
               onChange={handleChange}
               inputProps={{ maxLength: 13 }}
               required

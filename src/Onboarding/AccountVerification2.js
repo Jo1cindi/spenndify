@@ -25,7 +25,7 @@ const AccountVerification = () => {
     };
 
     //sending post request
-    const url = "https://login-herokuu.herokuapp.com/Otp/Manenos/send";
+    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/send/otp";
 
     axios({
       method: "post",

@@ -67,10 +67,10 @@ const Login = () => {
     );
   }
 
-  //Function to add user phone number/email to local storage
-  const storeUserInfo = () =>{
-    localStorage.setItem("email",JSON.stringify(email));
-  }
+  // //Function to add user phone number/email to local storage
+  // const storeUserInfo = () =>{
+  //   localStorage.getItem("phoneNumber",JSON.stringify(email));
+  // }
 
   return (
     <div className="login">
@@ -123,7 +123,7 @@ const Login = () => {
               required
             />
             <div className="forgetpin">
-              <Link to="/ForgotPin" className="forgetpinLink" onClick={storeUserInfo}>
+              <Link to="/ForgotPin" className="forgetpinLink">
                 Forgot pin?
               </Link>
             </div>
