@@ -390,6 +390,7 @@ body{
 }
 .transactionBtns ul li{
   list-style: none;
+  margin-right: 5px;
 }
 .transactionBtns p{
   position: absolute;
@@ -427,8 +428,9 @@ body{
   font-weight: bold;
 }
 .transactionDetails ul li{
-  margin-bottom: 20px;
   list-style: none;
+  width: 328px;
+  margin: auto;
 }
 .detail{
   background-color: #F7F7F7;
@@ -436,8 +438,8 @@ body{
   display: flex;
   text-align: left;
   height: 70px;
-  width: 328px;
-  margin: auto;
+  width: 100%;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 .detail img{
@@ -484,6 +486,217 @@ body{
   outline: none;
   border-radius: 23px;
   cursor: pointer;
+}
+
+/* Add Amount */
+.AddAmount{
+  width: 100vw;
+  height: 150vh;
+  background-color: #fbfbfb;
+  position: absolute;
+  z-index: 99;
+  overflow-y: hidden;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.addAmountCard{
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  background-color: #fbfbfb;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.closeAmount{
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 10px;
+}
+.closeAmountIcon{
+  color: #000000;
+  position: absolute;
+  top: 5px;
+  left: 90vw;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.addAmountCard h3{
+  text-align: center;
+  padding-top: 15%;
+  padding-bottom: 20px;
+  color: rgba(3,4,94, 0.5);
+  font-size: 28px;
+  font-weight: bolder;
+}
+.addAmountCard form{
+  width: 328px;
+  margin: auto;
+}
+.amountfield{
+  width: 328px;
+  height: 40px;
+}
+.amountBtn{
+  width: 328px;
+  height: 50px;
+  background-color: #03045E;
+  border-radius: 23px;
+  color: #fbfbfb;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.amountBtn :disabled{
+  background-color: #344b71;
+}
+
+ /* Create Categories */
+ .categories{
+  width: 100vw;
+  height: 150vh;
+  background-color: #fbfbfb;
+  position: absolute;
+  z-index: 99;
+  overflow-y: hidden;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.closeCategories{
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.categoriesIcon{
+  color: #000000;
+  position: absolute;
+  top: 5px;
+  left: 90vw;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.categoriesCard{
+  width: 50%;
+  height: 70%;
+  margin: auto;
+  background-color: #fbfbfb;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.categoriesCard h3{
+  margin-left: 10%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 24px;
+  color: #03045E;
+  font-weight: bold;
+}
+.general{
+  width: 90%;
+  height: 40%;
+  margin: auto;
+  background-color: #E4E4E4;
+}
+.general h4{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10%;
+  font-size: 20px;
+  color: #03045E;
+}
+.generalCategories{
+  width: 90%;
+  height: 70%;
+  margin: auto;
+  font-weight: bold;
+}
+.generalCategories ul{
+  height: 100%;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.generalCategories ul li{
+  list-style: none;
+  width: 120px;
+  height: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.generalCategories ul li img{
+  margin-top: 3px;
+}
+.inactiveCategory{
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  list-style: none;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.activeCategory{
+  border: 2px solid #03045E;
+  border-radius: 5px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  list-style: none;
+  margin-right: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.bills{
+  width: 90%;
+  height: 30%;
+  margin-left: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #E4E4E4;
+}
+.bills h4{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 5%;
+  font-size: 20px;
+  color: #03045E;
+}
+.billCategories{
+  width: 90%;
+  height: 60%;
+  margin: auto;
+  font-weight: bold;
+}
+.billCategories ul{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.billCategories ul li{
+  list-style: none;
+  width: 120px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+.billCategories ul li img{
+  margin-top: 3px;
+}
+.createBtn{
+  width: 328px;
+  height: 50px;
+  margin: auto;
+}
+.createBtn input{
+  width: 328px;
+  height: 50px;
+  border-radius: 23px;
+  cursor: pointer;
+  background-color: #03045E;
+  color: #fbfbfb;
+  font-size: 18px;
+  border: none;
 }
 
 
@@ -863,6 +1076,44 @@ body{
     margin-left: 0;
   }
 
+  /* Add Amount */
+  .AddAmount{
+    width: 100vw;
+    background-color: rgba(0,0,0, 0.5);
+    overflow: hidden;
+  }
+  .closeAmount{
+    margin-bottom: 20%;
+    right: 30px;
+  }
+  .closeAmountIcon{
+    color: #fbfbfb;
+  }
+  .addAmountCard{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: none;
+    margin-right: 5px;
+  }
+
+  /* Create Category */
+  .categories{
+    background-color: rgba(0,0,0, 0.5);
+  }
+  .closeCategories{
+    right: 30px;
+  }
+  .categoriesIcon{
+    color: #fbfbfb;
+  }
+  .categoriesCard{
+    width: 98%;
+    height: 100%;
+    border-radius: 30px 30px 0 0;
+    margin-left: 0;
+  }
+
   /* Expenses */
   .expensesContent{
     width: 100%;
@@ -884,13 +1135,16 @@ body{
     width: 90%;
   }
   
+
+
+  
 }
 
 
 /* Tablet */
 @media screen and (max-width: 1024px) and (min-width: 600px){
-  .Dashboard{
-    width: 100%;
+  body{
+    overflow-y: scroll;
   }
   .sidebar{
     display: none;
@@ -926,7 +1180,9 @@ body{
     height: 100%;
   }
   .dashboardContent{
-    width: 90%;
+    width: 100%;
+    left: 0;
+    overflow-x: hidden;
   }
   .user{
     width: 70%;
@@ -1009,7 +1265,48 @@ body{
     margin-left: 2rem;
     margin-right: 2rem;
     margin-top: 0;
+    overflow-y: scroll;
   }
+
+  /* Add Amount */
+  .AddAmount{
+    width: 100vw;
+    background-color: rgba(0,0,0, 0.5);
+    overflow: hidden;
+  }
+  .closeAmount{
+    margin-bottom: 10%;
+    right: 30px;
+  }
+  .closeAmountIcon{
+    color: #fbfbfb;
+  }
+  .addAmountCard{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: none;
+    margin-right: 5px;
+  }
+
+  /* Create Category */
+  .categories{
+    background-color: rgba(0,0,0, 0.5);
+  }
+  .closeCategories{
+    right: 30px;
+  }
+  .categoriesIcon{
+    color: #fbfbfb;
+  }
+  .categoriesCard{
+    width: 99%;
+    height: 100%;
+    border-radius: 30px 30px 0 0;
+    margin: auto;
+  }
+
+ 
  
 
   /* Expenses */

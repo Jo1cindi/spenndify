@@ -31,7 +31,7 @@ const EnterVerificationcode = () => {
     //Post Request
     const url = "https://login-herokuu.herokuapp.com/Otp/Manenos/verify";
     const otpCode = {
-      tempOtp: verificationCode,
+      receivedOtp: verificationCode,
     };
     console.log(otpCode);
     axios({

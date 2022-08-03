@@ -29,7 +29,7 @@ const EnterVerificationCode2 = () => {
     //Post Request
     const url = "https://spenndify-expenses-tracker-app.herokuapp.com/verify/registration/otp";
     const otpCode = {
-      tempOtp: verificationCode,
+      receivedOtp: verificationCode,
     };
     console.log(otpCode);
     axios({

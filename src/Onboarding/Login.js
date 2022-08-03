@@ -37,7 +37,7 @@ const Login = () => {
     //Post Request
     const url = "https://spenndify-expenses-app.herokuapp.com/spendy/user/authenticate";
     const loginDetails = {
-      username: email,
+      userName: email,
       password: pin,
     };
     console.log(loginDetails);
