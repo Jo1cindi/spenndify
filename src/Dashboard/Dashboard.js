@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "../Components/Sidebar";
+import MonthsChipCarousel from "../Components/MonthsChipCarousel";
 import "../Dashboard/DashboardStyles.css";
 import { ReactComponent as Avatar } from "../images/Avatar.svg";
 import { ReactComponent as Notification } from "../images/notification.svg";
@@ -37,30 +38,6 @@ const Dashboard = () => {
     greeting = "Good evening";
   }
 
-  //Months in an array
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  let monthIndex = (new Date().getMonth());
-  let monthName = months[monthIndex];
-
-  //Setting active list Item(month) when clicked
-  const [active, setActive] = useState(monthName);
-  const toggleMonth = (e) => {
-    setActive(e.target.innerText);
-  };
 
   //transaction options
   const [transactionOption, setTransactionOption] = useState({
@@ -183,42 +160,8 @@ const Dashboard = () => {
         </div>
 
         {/* Displaying Months */}
-        <div className="months">
-          <ul>
-            {months.map((month, index) => (
-              <li
-                key={index}
-                className={active === month ? "activeMonth" : "inactiveMonth"}
-                onClick={toggleMonth}
-              >
-                <p>{month}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <MonthsChipCarousel/>
 
-        {/* Displaying Months for the mobile and Tablet screens */}
-        <div className="months-mobile">
-          
-              <ul>
-                {months.map((month, index) => (
-                  <li key={index}>
-                    <div
-                      key={index}
-                      className={
-                        active === month
-                          ? "activeMonth-mobile"
-                          : "inactiveMonth-mobile"
-                      }
-                      onClick={toggleMonth}
-                    >
-                      <p>{month}</p>
-                    </div>
-                  </li>
-                ))}
-              
-            </ul>
-        </div>
 
         {/* Displaying Transactions */}
         <div className="transactions">

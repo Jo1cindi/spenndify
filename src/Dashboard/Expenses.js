@@ -1,24 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Sidebar from "../Components/Sidebar";
 import SidebarMobile from "../Components/SidebarMobile";
 import { FiSettings } from "react-icons/fi";
 import AddTransactionButton from "../Components/AddTransactionButton";
+import ToggleMonthButton from "../Components/ToggleMonthButton";
 
 const Expenses = () => {
 
-//Functions to toggle Month/Weeky buttons
-  const [active, setActive] = useState(true);
-  const Filter = () => {
-    setActive(!active)
-    setActiveMonthly(!activeMonthly)
-  };
-
-  const [activeMonthly, setActiveMonthly] = useState(false);
-  const filterMonthly = () => {
-    setActiveMonthly(!activeMonthly)
-    setActive(!active)
-    
-  };
 
   //Getting the months
   const months = [
@@ -53,25 +41,7 @@ const Expenses = () => {
             <FiSettings className="settingsIcon" />
           </div>
         </div>
-        <div className="filterExpenses">
-          <div className="toggleBtn">
-            <div
-              className={active ? "filterbyWeekly" : "inactiveFilterbyWeekly"}
-              onClick={Filter}
-            >
-              <p>Weekly</p>
-            </div>
-
-            <div
-              className={
-                activeMonthly ? "filterbyMonthly" : "inactiveFilterbyMonthly"
-              }
-              onClick={filterMonthly}
-            >
-              <p>Monthly</p>
-            </div>
-          </div>
-        </div>
+        <ToggleMonthButton/>
         <div className="expenditurePieChart">
           <p>Overview for {monthName}</p>
           <div className="piechartCard">

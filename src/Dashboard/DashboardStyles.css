@@ -895,14 +895,171 @@ body{
 
 /* Budget */
 .Budget{
-  background-color: darkkhaki;
   display: flex;
+  width: 100vw;
+  font-family: 'Nunito Sans', sans-serif;
 }
+.budgetContent{
+  background-color: #fbfbfb;
+  position: absolute;
+  width: 90%;
+  left: 10%;
+}
+.budgetHeader{
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.budgetTitle{
+  height: 100%;
+  width: 60%;
+  margin-left: 3%;
+}
+.budgetTitle p{
+  color: #707070;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.budgetTitle h3{
+  font-weight: bold;
+  color: #03045E;
+  font-size: 24px;
+}
+.budgetOverview{
+  width: 70%;
+  height: 80vh;
+  margin-left: 3%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+}
+.budgetOverview p{
+  color: #707070;
+  font-size: 16px;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+.detailedBreakdown{
+  width: 70%;
+  height: 60vh;
+  margin-left: 3%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.detailedBreakdownTitle{
+  color: #707070;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.detailedBreakdown ul{
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+.detailedBreakdown ul li{
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  height: 70px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+}
+.detailDescription{
+  display: flex;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 12px;
+}
+.detailDescription p{
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #707070;
+  margin-left: 5px;
+}
+.budgetAmount{
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #03045E;
+  margin-right: 10px;
+}
+
 
 /* History */
 .History{
-  background-color: darkkhaki;
   display: flex;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.historyContent{
+  background-color: #fbfbfb;
+  position: absolute;
+  width: 90%;
+  left: 10%;
+}
+.historyHeader{
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.historyTitle{
+  height: 100%;
+  width: 60%;
+  margin-left: 3%;
+}
+.historyTitle p{
+  color: #707070;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.historyTitle h3{
+  font-weight: bold;
+  color: #03045E;
+  font-size: 24px;
+}
+.transactionsHistoryGraph{
+  width: 70%;
+  height: 80vh;
+  margin-left: 3%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+}
+.totalMonthlyTransactions{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-left: 3%;
+}
+.monthName{
+  color: #707070;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.total{
+  margin-top: 10px;
+  color: #03045E;
+  font-weight: bold;
+  font-size: 20px;
+}
+.historyBreakdown{
+  background-color: #F7F7F7;
+  width: 70%;
+  height: 60vh;
+  margin-left: 3%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 
@@ -1120,7 +1277,8 @@ body{
     left: 0;
   }
   .expenseHeader{
-    margin-top: 20px;
+    width: 92%;
+   margin: auto;
   }
   .toggleBtn{
     width: 90%
@@ -1135,7 +1293,36 @@ body{
     width: 90%;
   }
   
+  /* Budget */
+  .budgetContent{
+    width: 100%;
+    left: 0;
+  }
+  .budgetHeader{
+   width: 92%;
+   margin: auto;
+  }
+  .budgetOverview{
+    width: 80%;
+  }
+  .detailedBreakdown{
+    width: 80%;
+  }
+  .settingsIcon{
+    right: 20px;
+  }
 
+  /* History */
+  .historyContent{
+    width: 100%;
+    left: 0;
+  }
+  .monthName{
+    font-size: 16px;
+  }
+  .total{
+    font-size: 16px;
+  }
 
   
 }
@@ -1328,6 +1515,38 @@ body{
   }
   .categoriesPiechartCard{
     width: 80%;
+  }
+
+
+  /* Budget */
+  .budgetContent{
+    width: 100%;
+    left: 0;
+  }
+  .budgetHeader{
+   width: 92%;
+   margin: auto;
+  }
+  .budgetOverview{
+    width: 80%;
+  }
+  .detailedBreakdown{
+    width: 80%;
+  }
+  .settingsIcon{
+    right: 20px;
+  }
+
+  /* History */
+  .historyContent{
+    width: 100%;
+    left: 0;
+  }
+  .monthName{
+    font-size: 16px;
+  }
+  .total{
+    font-size: 16px;
   }
   
 }
