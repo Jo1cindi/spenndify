@@ -35,7 +35,7 @@ const Login = () => {
     e && e.preventDefault();
 
     //Post Request
-    const url = "https://cors-anywhere.herokuapp.com/https://spenndify-expenses-app.herokuapp.com/spendy/user/authenticate";
+    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/authenticate";
     const loginDetails = {
       userName: email,
       password: pin,
