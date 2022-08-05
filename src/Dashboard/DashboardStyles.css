@@ -449,6 +449,21 @@ body{
   margin-top: 10px;
   margin-left: 15px;
 }
+.addNote{
+  display: flex;
+}
+.detail input{
+  height: 40px;
+  width: 200px;
+  margin-left: 5px;
+  margin-bottom: 16px;
+  border: none;
+  outline: none;
+  padding-bottom: 0;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-top: 15px;
+}
 .Categorycheckbox{
   width: 70%;
   margin: auto;
@@ -699,6 +714,55 @@ body{
   border: none;
 }
 
+
+/* Set date and Time */
+.setDate{
+  width: 100vw;
+  height: 150vh;
+  background-color: #fbfbfb;
+  position: absolute;
+  z-index: 99;
+  overflow-y: hidden;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.closeSetDate{
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.closeSetDateIcon{
+  color: #000000;
+  position: absolute;
+  top: 5px;
+  left: 90vw;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.setDateCard{
+  width: 50%;
+  height: 40%;
+  margin: auto;
+  background-color: #fbfbfb;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.setDateCard h3{
+  text-align: center;
+  font-size: 24px;
+  color: #03045E;
+  font-weight: bold;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.dateInput{
+  width: 328px;
+  height: 50px;
+  margin: auto;
+  background-color: indianred;
+}
 
 
 

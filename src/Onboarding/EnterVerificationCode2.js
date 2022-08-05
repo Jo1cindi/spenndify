@@ -4,12 +4,11 @@ import Lottie from "react-lottie-player";
 import Animation from "../images/Animation.json";
 import OTPInput from "otp-input-react";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const EnterVerificationCode2 = () => {
-  const [verificationCode, setVerificationCode] = useState("");  //Verification code input values
+  const [verificationCode, setVerificationCode] = useState(""); //Verification code input values
 
-  
   const [counter, setCounter] = useState(60); //Sets the number of seconds the counter should start with
 
   let verificationError = "";
@@ -22,12 +21,13 @@ const EnterVerificationCode2 = () => {
   }, [counter]);
 
   //navigation to create pin page
-    // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //Function to verify account
   const handleClick = () => {
     //Post Request
-    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/verify/registration/otp";
+    const url =
+      "https://spenndify-expenses-tracker-app.herokuapp.com/verify/registration/otp";
     const otpCode = {
       receivedOtp: verificationCode,
     };
@@ -36,21 +36,22 @@ const EnterVerificationCode2 = () => {
       method: "post",
       url: url,
       data: otpCode,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      }
     })
       .then((response) => {
         console.log(response);
-        if(response.data === "Wrong OTP try again"){
-          verificationError = "Wrong verification code please try again"
-        }
-        //navigation to create pin page
-        // navigate("/CreatePin");
+        
       })
       .catch((error) => {
         if (error.response.data) {
           console.log(error.response.data);
         }
       });
+      //navigation to create pin page
+      navigate("/CreatePin");
+      
   };
 
   //Getting phone number from local storage
@@ -69,7 +70,7 @@ const EnterVerificationCode2 = () => {
     };
 
     //sending post request
-    const url = "https://login-herokuu.herokuapp.com/Otp/Manenos/send";
+    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/send/otp";
 
     axios({
       method: "post",
@@ -79,7 +80,7 @@ const EnterVerificationCode2 = () => {
     })
       .then((response) => {
         console.log(response);
-        
+
         let serverResponse = "";
         axios.defaults.config.data = serverResponse;
       })
@@ -126,7 +127,7 @@ const EnterVerificationCode2 = () => {
               }}
             />
           </div>
-          <div className = "verificationError">
+          <div className="verificationError">
             <p>{verificationError}</p>
           </div>
           <input
@@ -134,7 +135,7 @@ const EnterVerificationCode2 = () => {
             value="VERIFY ACCOUNT"
             className="verify"
             onClick={handleClick}
-            disabled = {!verificationCode || verificationCode.length < 4}
+            disabled={!verificationCode || verificationCode.length < 4}
           />
           <div className="EnterVerificationcodeTxt">
             <p>Relax, we are sending the code in {counter} seconds</p>
@@ -142,7 +143,6 @@ const EnterVerificationCode2 = () => {
           <div className="resend">
             <p onClick={Resend}>Resend</p>
           </div>
-          
         </div>
         {/* Animation */}
         <div className="lottie-animation">

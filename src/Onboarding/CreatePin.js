@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import Logo from "../Components/Logo";
 import { TextField } from "@mui/material";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreatePin = () => {
   const [userData, setUserData] = useState("");
-  const [userAnswers, setUserAnswers] = useState("")
+  const [userAnswers, setUserAnswers] = useState("");
   const [userPin, setUserPin] = useState({
     pin: "",
   });
-  const [confirmPin, setConfirmPin] = useState("")
+  const [confirmPin, setConfirmPin] = useState("");
 
   const handleChange = (e) => {
     setUserPin({
@@ -22,7 +22,7 @@ const CreatePin = () => {
   let error = "";
 
   //Character Limit
-  const characterLimit =4;
+  const characterLimit = 4;
 
   //Comfirm Pin
   if (confirmPin !== userPin.pin) {
@@ -31,67 +31,70 @@ const CreatePin = () => {
   if (confirmPin.length < 1) {
     error = "";
   }
- 
-  
 
   //Navigation to Log in Page
-  // const navigation = useNavigate();
-    //Getting data from sign-up form and security form
-    const signupFormData = JSON.parse(localStorage.getItem('userData'));
-    if(userData){
-      setUserData(userData)
-    }
+  const navigation = useNavigate();
+  //Getting data from sign-up form and security form
+  const signupFormData = JSON.parse(localStorage.getItem("userData"));
+  if (userData) {
+    setUserData(userData);
+  }
 
-  
-    // Getting data from local storage
-    const securityQuestionsFormData = JSON.parse(localStorage.getItem('userAnswers'));
-    if(userAnswers){
-      setUserAnswers(userAnswers)
-    }
+  // Getting data from local storage
+  const securityQuestionsFormData = JSON.parse(
+    localStorage.getItem("userAnswers")
+  );
+  if (userAnswers) {
+    setUserAnswers(userAnswers);
+  }
 
-  
-    //Data from create pin form
-    const createPin ={
-      password : userPin.pin
-    }
-    console.log(createPin)
+  //Data from create pin form
+  const createPin = {
+    password: userPin.pin,
+  };
+  console.log(createPin);
 
   //Function to send post request
   function handleClick(e) {
+    //Object containing user details
+    const userDetails = {
+      ...signupFormData,
+      ...securityQuestionsFormData,
+      ...createPin,
+    };
 
-   //Object containing user details 
-   const userDetails  = {
-     ...signupFormData,
-     ...securityQuestionsFormData,
-     ...createPin
-   }
-  
-   console.log(userDetails)
+    console.log(userDetails);
 
-  //Post request
-  const url = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/registration";
-  
-  e.preventDefault()
-  axios({
-    method: "post",
-    url : url,
-    data : userDetails,
-    headers: { "Content-Type": "application/json" }
-  }).then((response)=>{
-    console.log(response)
-  }).catch((error)=>{
-    if (error.response.data) {
-      console.log(error.response.data);
-    }
-  })
+    //Post request
+    const url =
+      "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/registration";
 
-  // navigation("/Login");
+    e.preventDefault();
+    axios({
+      method: "post",
+      url: url,
+      data: userDetails,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        if (error.response.data) {
+          console.log(error.response.data);
+        }
+      });
+
+    navigation("/Login");
   }
 
   return (
     <div className="CreatePin">
       {/* Logo */}
-      <Logo/>
+      <Logo />
       <div className="CreatePinCard">
         <div className="inputtext">
           <p>Create new pin</p>
@@ -104,7 +107,7 @@ const CreatePin = () => {
             className="pinfield"
             type="password"
             value={userPin.pin}
-            name = "pin"
+            name="pin"
             onChange={handleChange}
             inputProps={{ maxLength: characterLimit }}
             helperText={`${userPin.pin.length}/${characterLimit}`}
@@ -118,7 +121,9 @@ const CreatePin = () => {
             className="newPinfield"
             type="password"
             value={confirmPin}
-            onChange={(e)=> {setConfirmPin(e.target.value)}}
+            onChange={(e) => {
+              setConfirmPin(e.target.value);
+            }}
             inputProps={{ maxLength: characterLimit }}
             helperText={error}
             FormHelperTextProps={{ style: { color: "red" } }}

@@ -29,7 +29,7 @@ const EnterVerificationcode = () => {
     // e.preventdefault (); //Clearing input fields
 
     //Post Request
-    const url = "https://login-herokuu.herokuapp.com/Otp/Manenos/verify";
+    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/verify/registration/otp";
     const otpCode = {
       receivedOtp: verificationCode,
     };
@@ -38,7 +38,10 @@ const EnterVerificationcode = () => {
       method: "post",
       url: url,
       data: otpCode,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
     })
       .then((response) => {
         console.log(response);
@@ -71,13 +74,15 @@ const EnterVerificationcode = () => {
     };
 
     //sending post request
-    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/verify/registration/otp";
+    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/send/otp";
 
     axios({
       method: "post",
       url: url,
       data: userPhoneNumber,
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json" 
+      },
     })
       .then((response) => {
         console.log(response);

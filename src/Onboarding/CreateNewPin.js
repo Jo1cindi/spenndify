@@ -28,6 +28,8 @@ const CreateNewPin = () => {
     navigation("/Login");
   }
 
+  
+
   return (
     <div className="CreateNewPin">
       {/* Logo */}

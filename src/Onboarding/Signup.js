@@ -45,7 +45,7 @@ const Signup = () => {
   const navigation = useNavigate();
 
   //Phone number where otp is sent
-  const userPhoneNumber = user.telNumber;
+  const userPhoneNumber = user.phone;
 
   //Function to send post request
   const handleSubmit = (e) => {
@@ -67,14 +67,6 @@ const Signup = () => {
     localStorage.setItem("userPhoneNumber", JSON.stringify(userPhoneNumber));
   };
 
-  //Getting phone number from local storage to prevent user from sigining up more than once
-  // const phoneNo = JSON.parse(localStorage.getItem("userPhoneNumber"));
-
-  // if (phoneNo === user.telNumber) {
-  //   error = "User already exists";
-  // } else {
-  //   error = "";
-  // }
 
   return (
     <div className="signup">

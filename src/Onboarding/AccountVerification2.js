@@ -10,7 +10,8 @@ const AccountVerification = () => {
   const navigate = useNavigate();
 
   //Getting phone number from local storage
-  const phoneNumber = JSON.parse(localStorage.getItem("email"));
+  const userDetails = JSON.parse(localStorage.getItem("userData"));
+  const phoneNumber = userDetails.phone
 
   //Hiding the middle digits of phone number
   const hiddenPhoneNumber = phoneNumber.replace(
@@ -25,13 +26,16 @@ const AccountVerification = () => {
     };
 
     //sending post request
-    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/send/otp";
+    const url =
+      "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/send/otp";
 
     axios({
       method: "post",
       url: url,
       data: userPhoneNumber,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
       .then((response) => {
         console.log(response);

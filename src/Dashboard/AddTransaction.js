@@ -38,22 +38,23 @@ const AddTransaction = () => {
   const toggleAddAmount = () => {
     setOpenAddAmount(!openAddAmount);
   };
-  const closeAmountWindow = () => {
+  const closeAmountWindow = (e) => {
+    e.preventDefault();
     setOpenAddAmount(false);
   };
 
   //Value of the amount being entered
   const [amount, setAmount] = useState("");
-  
 
   //Closing and opening castegories pop up window
   const [openCategories, setOpenCategories] = useState("");
   const toggleCategories = () => {
     setOpenCategories(!openCategories);
   };
-  const closeCategoriesPopup = () =>{
+
+  const closeCategoriesPopup = () => {
     setOpenCategories(false);
-  }
+  };
 
   //General Categories array
   const generalCategories = [
@@ -112,7 +113,18 @@ const AddTransaction = () => {
     },
   ];
 
+  //Highlighting the categories when clicked
   const [activeCategory, setActiveCategory] = useState();
+
+  //Notes value
+  const [notes, setNotes] = useState("");
+
+
+  //Close and opening setDate and Time pop window
+  const [openSetTime, setOpenSetTime] = useState("")
+  const toggleSetTime =  () =>{
+    setOpenSetTime(!openSetTime);
+  }
 
   return (
     <>
@@ -130,7 +142,6 @@ const AddTransaction = () => {
             <form>
               <TextField
                 label="Enter Amount"
-                name="amount"
                 className="amountfield"
                 sx={{ marginBottom: 5 }}
                 value={amount}
@@ -143,7 +154,9 @@ const AddTransaction = () => {
                 value="CONTINUE"
                 className="amountBtn"
                 disabled={amount === ""}
-                onClick={toggleCategories}
+                onClick={() => {
+                  setOpenCategories(!openCategories);
+                }}
               />
             </form>
           </div>
@@ -154,7 +167,10 @@ const AddTransaction = () => {
       {openCategories && (
         <div className="categories">
           <div className="closeCategories">
-            <IoCloseSharp className="categoriesIcon" onClick={closeCategoriesPopup}/>
+            <IoCloseSharp
+              className="categoriesIcon"
+              onClick={closeCategoriesPopup}
+            />
           </div>
           <div className="categoriesCard">
             <h3>Select Categories</h3>
@@ -192,9 +208,14 @@ const AddTransaction = () => {
                             ? "activeCategory"
                             : "inactiveCategory"
                         }
-                        onClick={() => setActiveCategory(selectedBillCategory.id)}
+                        onClick={() =>
+                          setActiveCategory(selectedBillCategory.id)
+                        }
                       >
-                        <img src={selectedBillCategory.icon} alt="categoryIcon" />
+                        <img
+                          src={selectedBillCategory.icon}
+                          alt="categoryIcon"
+                        />
                         <p>{selectedBillCategory.category}</p>
                       </div>
                     </li>
@@ -203,91 +224,111 @@ const AddTransaction = () => {
               </div>
             </div>
             <div className="createBtn">
-              <input type="submit" value = "CREATE CUSTOM CATEGORY"/>
+              <input type="submit" value="CREATE CUSTOM CATEGORY" />
             </div>
           </div>
         </div>
       )}
 
+      {/* Set Date and Time Pop up window */}
+      {
+        openSetTime && (
+          <div className="setDate">
+           <div className="closeSetDate">
+           <IoCloseSharp className="closeSetDateIcon"/>
+           </div>
+           <div className="setDateCard">
+            <h3>Set Date & Time</h3>
+            <div className="dateInput">
+              
+            </div>
+           </div>
+         </div>
+        )
+      }
+
       <div className="addTransactionsPage">
-      <Logo />
-      <div className="AddTransactions">
-        <div className="transactionsHeader">
-          <BackArrow className="backArrow" onClick={() => navigate(-1)} />
-          <p>Add Transactions</p>
-        </div>
-        <div className="transactionBtns">
-          <ul>
-            {buttonsArray.map((button, index) => (
-              <li key={index}>
-                <div
-                  key={index}
-                  className={active === button ? "activeBtn" : "inactiveBtn"}
-                  onClick={toggleButton}
-                >
-                  <p>{button}</p>
+        <Logo />
+        <div className="AddTransactions">
+          <div className="transactionsHeader">
+            <BackArrow className="backArrow" onClick={() => navigate(-1)} />
+            <p>Add Transactions</p>
+          </div>
+          <div className="transactionBtns">
+            <ul>
+              {buttonsArray.map((button, index) => (
+                <li key={index}>
+                  <div
+                    key={index}
+                    className={active === button ? "activeBtn" : "inactiveBtn"}
+                    onClick={toggleButton}
+                  >
+                    <p>{button}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="transactionDetails">
+            <p>
+              {" "}
+              {active === "Income"
+                ? " Add your Income transaction"
+                : active === "Expense"
+                ? "Add your Expense transaction"
+                : "Create your Budget"}
+            </p>
+            <ul>
+              <li>
+                <div className="detail" onClick={toggleAddAmount}>
+                  <img src={AmountIcon} alt="icon" />
+                  <p>Amount</p>
+                </div>
+                <div className="detail" onClick={toggleCategories}>
+                  <img src={CategoriesIcon} alt="icon" />
+                  <p>Categories</p>
+                </div>
+                {active === "Budget" && (
+                  <div className="detail">
+                    <img src={CategoriesIcon} alt="icon" />
+                    <p>Set cycle</p>
+                  </div>
+                )}
+                <div className="detail">
+                  <div className="addNote">
+                    <img src={NotesIcon} alt="icon" />
+                    <p>Notes</p>
+                  </div>
+                  <input type="text" value={notes} onChange={(e)=> {setNotes(e.target.value)}} defaultValue="Optional"/>
                 </div>
               </li>
-            ))}
-          </ul>
-        </div>
-        <div className="transactionDetails">
-          <p>
-            {" "}
-            {active === "Income"
-              ? " Add your Income transaction"
-              : active === "Expense"
-              ? "Add your Expense transaction"
-              : "Create your Budget"}
-          </p>
-          <ul>
-            <li>
-              <div className="detail" onClick={toggleAddAmount}>
-                <img src={AmountIcon} alt="icon" />
-                <p>Amount</p>
-              </div>
-              <div className="detail" onClick={toggleCategories}>
-                <img src={CategoriesIcon} alt="icon" />
-                <p>Categories</p>
-              </div>
-              {active === "Budget" && (
-                <div className="detail">
-                  <img src={CategoriesIcon} alt="icon" />
-                  <p>Set cycle</p>
-                </div>
-              )}
-              <div className="detail">
-                <img src={NotesIcon} alt="icon" />
-                <p>Notes</p>
-              </div>
-            </li>
-          </ul>
-          <FormGroup className="Categorycheckbox">
-            <FormControlLabel
-              control={
-                <Checkbox
-                  sx={{
-                    color: "#03045E",
-                    "&.Mui-checked": { color: "#03045E" },
-                    marginLeft: "1rem",
-                    "&.Mui-label": { fontSize: "14" },
-                  }}
-                  checked={true}
-                />
-              }
-              label="This is a recurring income transaction"
-              sx={{ color: "#03045E", marginTop: "1rem" }}
-            ></FormControlLabel>
-          </FormGroup>
-          <div className="time">
-            <img src={TimeIcon} alt="Time and Date" />
-            <p>Set Date & Time</p>
-          </div>
-          <div className="saveBtn">
-            <input type="submit" value="SAVE & COMPLETE" />
+            </ul>
+            <FormGroup className="Categorycheckbox">
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#03045E",
+                      "&.Mui-checked": { color: "#03045E" },
+                      marginLeft: "1rem",
+                      "&.Mui-label": { fontSize: "14" },
+                    }}
+                    checked={true}
+                  />
+                }
+                label="This is a recurring income transaction"
+                sx={{ color: "#03045E", marginTop: "1rem" }}
+              ></FormControlLabel>
+            </FormGroup>
+            <div className="time" onClick={toggleSetTime}>
+              <img src={TimeIcon} alt="Time and Date" />
+              <p>Set Date & Time</p>
+            </div>
+            <div className="saveBtn">
+              <input type="submit" value="SAVE & COMPLETE" />
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   );

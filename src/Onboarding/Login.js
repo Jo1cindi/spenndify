@@ -35,7 +35,7 @@ const Login = () => {
     e && e.preventDefault();
 
     //Post Request
-    const url = "https://spenndify-expenses-app.herokuapp.com/spendy/user/authenticate";
+    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/authenticate";
     const loginDetails = {
       userName: email,
       password: pin,
@@ -46,7 +46,10 @@ const Login = () => {
       method: "post",
       url: url,
       data: loginDetails,
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
     }).then(
       (response) => {
         //Storing token in local storage

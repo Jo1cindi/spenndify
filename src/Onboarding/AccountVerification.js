@@ -10,7 +10,8 @@ const AccountVerification = () => {
   const navigate = useNavigate();
 
   //Getting phone number from local storage
-  const phoneNumber = JSON.parse(localStorage.getItem("email"));
+  const userDetails = JSON.parse(localStorage.getItem("userData"));
+  const phoneNumber = userDetails.phone
 
   //Hiding the middle digits of phone number
   const hiddenPhoneNumber = phoneNumber.replace(
@@ -20,7 +21,7 @@ const AccountVerification = () => {
 
   //Function to send verification code
   const handleClick = () => {
-    const userPhoneNumber = {
+    const userTelNumber = {
       phone: phoneNumber,
     };
 
@@ -30,8 +31,10 @@ const AccountVerification = () => {
     axios({
       method: "post",
       url: url,
-      data: userPhoneNumber,
-      headers: { "Content-Type": "application/json" },
+      data: userTelNumber,
+      headers: { 
+        "Content-Type": "application/json",
+      }
     })
       .then((response) => {
         console.log(response);
