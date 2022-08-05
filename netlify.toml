@@ -1,8 +1,12 @@
+# The following redirect is intended for use with most SPAs that handle
+# routing internally.
 [[redirects]]
-  from = "/Login"
-  to = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/authenticate"
+  from = "/*"
+  to = "/index.html"
   status = 200
- 
- # These are optional
-  force = true
-  headers = {X-From = "Netlify"}
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/authenticate"
+    [headers.values]
+    Access-Control-Allow-Origin : "*"
