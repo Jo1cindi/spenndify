@@ -20,7 +20,7 @@ import "../Dashboard/DashboardStyles.css";
 import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
 import { IoCloseSharp } from "react-icons/io5";
-import { DateTimePicker } from "@mui/x-date-pickers";
+
 
 const AddTransaction = () => {
   const navigate = useNavigate();
@@ -244,7 +244,7 @@ const AddTransaction = () => {
            <div className="setDateCard">
             <h3>Set Date & Time</h3>
             <div className="dateInput">
-              <DateTimePicker/>
+             
             </div>
            </div>
          </div>
