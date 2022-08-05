@@ -1,8 +1,8 @@
 [[redirects]]
-  from = “/api/*”
-  to = “https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/authenticate:splat"
+  from = "/Login"
+  to = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/authenticate"
   status = 200
-[[redirects]]
-  from = “/*”
-  to = “/index.html”
-  status = 200
+ 
+ # These are optional
+  force = true
+  headers = {X-From = "Netlify"}
