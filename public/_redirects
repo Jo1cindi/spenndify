@@ -1,1 +1,3 @@
 /*    /index.html    200
+
+/api/* https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/authenticate:splat 200
