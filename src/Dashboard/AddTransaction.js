@@ -20,6 +20,7 @@ import "../Dashboard/DashboardStyles.css";
 import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
 import { IoCloseSharp } from "react-icons/io5";
+import { DateTimePicker } from "@mui/x-date-pickers";
 
 const AddTransaction = () => {
   const navigate = useNavigate();
@@ -124,6 +125,9 @@ const AddTransaction = () => {
   const [openSetTime, setOpenSetTime] = useState("")
   const toggleSetTime =  () =>{
     setOpenSetTime(!openSetTime);
+  }
+  const closeSetTime = () =>{
+    setOpenSetTime(false)
   }
 
   return (
@@ -235,12 +239,12 @@ const AddTransaction = () => {
         openSetTime && (
           <div className="setDate">
            <div className="closeSetDate">
-           <IoCloseSharp className="closeSetDateIcon"/>
+           <IoCloseSharp className="closeSetDateIcon" onClick={closeSetTime}/>
            </div>
            <div className="setDateCard">
             <h3>Set Date & Time</h3>
             <div className="dateInput">
-              
+              <DateTimePicker/>
             </div>
            </div>
          </div>

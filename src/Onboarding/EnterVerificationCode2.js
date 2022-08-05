@@ -27,7 +27,7 @@ const EnterVerificationCode2 = () => {
   const handleClick = () => {
     //Post Request
     const url =
-      "https://spenndify-expenses-tracker-app.herokuapp.com/verify/registration/otp";
+      "https://cors-anywhere.herokuapp.com/https://spenndify-expenses-app.herokuapp.com/spendy/user/verify/registration/otp";
     const otpCode = {
       receivedOtp: verificationCode,
     };
@@ -37,11 +37,17 @@ const EnterVerificationCode2 = () => {
       url: url,
       data: otpCode,
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       }
     })
       .then((response) => {
         console.log(response);
+        const res = response.data
+        console.log(res)
+        if(res === 200){
+            //navigation to create pin page
+      navigate("/CreatePin");
+        }
         
       })
       .catch((error) => {
@@ -49,8 +55,7 @@ const EnterVerificationCode2 = () => {
           console.log(error.response.data);
         }
       });
-      //navigation to create pin page
-      navigate("/CreatePin");
+      
       
   };
 

@@ -29,7 +29,7 @@ const EnterVerificationcode = () => {
     // e.preventdefault (); //Clearing input fields
 
     //Post Request
-    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/verify/registration/otp";
+    const url =  "https://cors-anywhere.herokuapp.com/https://spenndify-expenses-app.herokuapp.com/spendy/user/authenticate";
     const otpCode = {
       receivedOtp: verificationCode,
     };
@@ -45,11 +45,10 @@ const EnterVerificationcode = () => {
     })
       .then((response) => {
         console.log(response);
-        if(response.data === "Wrong OTP try again"){
-          verificationError = "Wrong verification code please try again"
-        }
-        // navigation to create pin page
+        if(response.status === 200){
+          // navigation to create pin page
         navigate("/CreatePin");
+        }
       })
       .catch((error) => {
         if (error.response.data) {
@@ -86,11 +85,6 @@ const EnterVerificationcode = () => {
     })
       .then((response) => {
         console.log(response);
-        if(response.data === "Wrong OTP try again"){
-          verificationError = "Wrong verification code. Please try again"
-        }
-        console.log(response.data)
-        console.log(response.statusText)
       })
       .catch((error) => {
         if (error.response.data) {
