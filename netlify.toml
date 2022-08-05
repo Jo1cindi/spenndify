@@ -9,4 +9,4 @@
   # Define which paths this specific [[headers]] block will cover.
   for = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/authenticate"
     [headers.values]
-    Access-Control-Allow-Origin : "*"
+    Access-Control-Allow-Origin = "*"
