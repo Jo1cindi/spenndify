@@ -43,7 +43,7 @@ const Login = () => {
     console.log(loginDetails);
 
     axios({
-      mode: 'no-cors',
+      mode: 'cors',
       method: "post",
       url: url,
       data: loginDetails,
