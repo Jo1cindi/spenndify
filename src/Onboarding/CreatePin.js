@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../Components/Logo";
 import { TextField } from "@mui/material";
-import axios from "axios";
+// import axios from "axios";
 // import { useNavigate } from "react-router-dom";
 
 const CreatePin = () => {
@@ -70,10 +70,10 @@ const CreatePin = () => {
       "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/registration";
 
     e.preventDefault();
-    axios({
-      method: "post",
+    fetch({
+      method: "POST",
       url: url,
-      data: userDetails,
+      body: JSON.stringify(userDetails),
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*"
