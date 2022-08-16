@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../Components/Logo";
 import { TextField, InputLabel } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 const Login = () => {
   //Pin Input
@@ -42,7 +42,7 @@ const Login = () => {
     };
     console.log(loginDetails);
 
-    axios({
+    fetch({
       mode: 'cors',
       method: "post",
       url: url,
@@ -58,7 +58,7 @@ const Login = () => {
         localStorage.setItem("token", token);
 
         //Setting token to axios common header
-        axios.defaults.headers.common["Authorization"] =
+        fetch.defaults.headers.common["Authorization"] =
           "JWT" + localStorage.getItem("token"); //Getting token from locals storage
         navigation("/Dashboard"); //Navigation to dashboard if user token exists
 
