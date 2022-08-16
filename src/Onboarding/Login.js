@@ -25,14 +25,14 @@ const Login = () => {
     emailError = "";
   }
 
-  //navigation to Dashboard
+  // //navigation to Dashboard
   const navigation = useNavigate();
 
-  //Error if logging details are Invalid
+  // //Error if logging details are Invalid
   const [error, setError] = useState("");
 
-  function handleClick(e) {
-    e && e.preventDefault();
+   function handleClick(event) {
+    event.preventDefault();
 
     //Post Request
     const url = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/authenticate";
@@ -40,41 +40,67 @@ const Login = () => {
       userName: email,
       password: pin,
     };
-    console.log(loginDetails);
+    console.log(loginDetails)
 
-    fetch({
-      mode: 'cors',
-      method: "post",
+    fetch( {
       url: url,
-      data: loginDetails,
-      headers: { 
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
-      }
-    }).then(
-      (response) => {
-        //Storing token in local storage
-        const token = response.data.token;
-        localStorage.setItem("token", token);
-
-        //Setting token to axios common header
-        fetch.defaults.headers.common["Authorization"] =
-          "JWT" + localStorage.getItem("token"); //Getting token from locals storage
+      method: "POST",
+      body: JSON.stringify(loginDetails),
+      headers: {
+        'Content-type': 'application/json',
+      }, 
+      mode: 'cors',
+    })
+    .then(response => {
+       
         navigation("/Dashboard"); //Navigation to dashboard if user token exists
 
         console.log(response);
-      },
-      (reason) => {
-        console.error(reason);  
-        setError("Invalid Username/Password"); // Log in error if login details are incorrect
-      }
-    );
+    },(reason) => {
+          console.error(reason);  
+          setError("Invalid Username/Password"); // Log in error if login details are incorrect
+        }) 
+    
+    
+    
+
+    // fetch({
+    //   mode: 'cors',
+    //   method: "post",
+    //   url: url,
+    //   body: JSON.stringify(
+    //     loginDetails
+    //   ),
+    //   headers: { 
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Origin": "*"
+    //   }
+    // }).then(
+    //   (response) => {
+    //     //Storing token in local storage
+    //     const token = response.data.token;
+    //     localStorage.setItem("token", token);
+
+    //     //Setting token to axios common header
+    //     fetch.defaults.headers.common["Authorization"] =
+    //       "JWT" + localStorage.getItem("token"); //Getting token from locals storage
+    //     navigation("/Dashboard"); //Navigation to dashboard if user token exists
+
+    //     console.log(response);
+    //   },
+    //   (reason) => {
+    //     console.error(reason);  
+    //     setError("Invalid Username/Password"); // Log in error if login details are incorrect
+    //   }
+    // );
   }
 
   // //Function to add user phone number/email to local storage
   // const storeUserInfo = () =>{
   //   localStorage.getItem("phoneNumber",JSON.stringify(email));
   // }
+
+ 
 
   return (
     <div className="login">
