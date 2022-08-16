@@ -3,7 +3,7 @@ import Logo from "../images/spenndifywhitelogo.png";
 import Banner from "../images/signupbanner.png";
 import { TextField } from "@mui/material";
 import LogoBlue from "../images/spenndifylogo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   //Setting default value
@@ -42,7 +42,7 @@ const Signup = () => {
   }
 
   // // navigation;
-  // const navigation = useNavigate();
+  const navigation = useNavigate();
 
   //Phone number where otp is sent
   const userPhoneNumber = user.phone;
@@ -61,7 +61,7 @@ const Signup = () => {
     //Storing user data in local storage
     localStorage.setItem("userData", JSON.stringify(userData));
     console.log(userData);
-    // navigation("/SecurityQuestions");
+    navigation("/SecurityQuestions");
 
     //Storing phone number in local storage
     localStorage.setItem("userPhoneNumber", JSON.stringify(userPhoneNumber));

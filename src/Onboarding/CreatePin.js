@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../Components/Logo";
 import { TextField } from "@mui/material";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const CreatePin = () => {
   const [userData, setUserData] = useState("");
@@ -33,7 +33,7 @@ const CreatePin = () => {
   }
 
   //Navigation to Log in Page
-  const navigation = useNavigate();
+  // const navigation = useNavigate();
   //Getting data from sign-up form and security form
   const signupFormData = JSON.parse(localStorage.getItem("userData"));
   if (userData) {
@@ -88,7 +88,7 @@ const CreatePin = () => {
         }
       });
 
-    navigation("/Login");
+    // navigation("/Login");
   }
 
   return (
