@@ -42,24 +42,31 @@ const Login = () => {
     };
     console.log(loginDetails)
 
-    fetch( {
-      url: url,
+    fetch(url, {
+      
       method: "POST",
       body: JSON.stringify(loginDetails),
       headers: {
         'Content-type': 'application/json',
       }, 
       mode: 'cors',
+
     })
     .then(response => {
-       
-        navigation("/Dashboard"); //Navigation to dashboard if user token exists
+        if(response.status === 200 ) {
+          navigation("/Dashboard"); //Navigation to dashboard if user token exists
 
+        }else{
+          setError("Invalid Username/Password"); // Log in error if login details are incorrect
+        }
+        
+        
         console.log(response);
     },(reason) => {
           console.error(reason);  
-          setError("Invalid Username/Password"); // Log in error if login details are incorrect
-        }) 
+          
+        })
+       
     
     
     
