@@ -34,8 +34,8 @@ const EnterVerificationcode = () => {
     //Post Request
     const url =  "https://spenndify-expenses-app.herokuapp.com/spendy/user/verify/registration/otp";
     const otpCode = {
-      receivedOtp: verificationCode,
-      phone: phoneNumber
+      "receivedOtp": verificationCode,
+      "phone": phoneNumber
     };
     console.log(otpCode);
     axios({
