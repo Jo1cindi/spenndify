@@ -29,7 +29,7 @@ const EnterVerificationcode = () => {
     // e.preventdefault (); //Clearing input fields
 
     //Post Request
-    const url =  "https://cors-anywhere.herokuapp.com/https://spenndify-expenses-app.herokuapp.com/spendy/user/authenticate";
+    const url =  "https://cors-anywhere.herokuapp.com/https://spenndify-expenses-app.herokuapp.com/spendy/user/verify/registration/otp";
     const otpCode = {
       receivedOtp: verificationCode,
     };

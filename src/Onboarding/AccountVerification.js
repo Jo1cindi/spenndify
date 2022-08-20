@@ -44,7 +44,7 @@ const AccountVerification = () => {
           console.log(error.response.data);
         }
       });
-    navigate("/EnterVerificationCode2");
+    navigate("/EnterVerificationCode");
   };
 
   return (
