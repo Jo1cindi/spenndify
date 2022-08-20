@@ -24,6 +24,9 @@ const EnterVerificationcode = () => {
   //navigation to create pin page
     const navigate = useNavigate();
 
+  //Getting phone number from local storage
+  const phoneNumber = JSON.parse(localStorage.getItem("userPhoneNumber"));  
+
   //Function to verify account
   const handleClick = (e) => {
     // e.preventdefault (); //Clearing input fields
@@ -32,6 +35,7 @@ const EnterVerificationcode = () => {
     const url =  "https://spenndify-expenses-app.herokuapp.com/spendy/user/verify/registration/otp";
     const otpCode = {
       receivedOtp: verificationCode,
+      phone: phoneNumber
     };
     console.log(otpCode);
     axios({
@@ -57,8 +61,7 @@ const EnterVerificationcode = () => {
       });
   };
 
-  //Getting phone number from local storage
-  const phoneNumber = JSON.parse(localStorage.getItem("userPhoneNumber"));
+  
 
   //Hiding the middle digits of phone number
   const hiddenPhoneNumber = phoneNumber.replace(
