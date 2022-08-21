@@ -22,10 +22,35 @@ const CreateNewPin = () => {
     error = "";
   }
 
+  //Getting phone number from local storage
+  const phone = JSON.parse(
+    localStorage.getItem("phoneNumber")
+  ); 
+
   //Navigation to Log in Page
   const navigation = useNavigate();
+
+  //Sending put request
   function handleClick() {
-    navigation("/Login");
+    const url="https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/password/reset";
+    const resetPassword={
+      phone: phone,
+      newPassword: newPin
+    }
+    console.log(resetPassword)
+    fetch(url, {
+      method: "PUT",
+      body: JSON.stringify(resetPassword),
+      headers: {
+        "Content-Type": "application/json",
+      }
+    }).then((response)=>{
+      console.log(response)
+      navigation("/Login");
+    }).catch((error)=>{
+      console.log(error)
+    })
+    
   }
 
   

@@ -66,47 +66,13 @@ const Login = () => {
           console.error(reason);  
           
         })
-       
-    
-    
-    
-
-    // fetch({
-    //   mode: 'cors',
-    //   method: "post",
-    //   url: url,
-    //   body: JSON.stringify(
-    //     loginDetails
-    //   ),
-    //   headers: { 
-    //     "Content-Type": "application/json",
-    //     "Access-Control-Allow-Origin": "*"
-    //   }
-    // }).then(
-    //   (response) => {
-    //     //Storing token in local storage
-    //     const token = response.data.token;
-    //     localStorage.setItem("token", token);
-
-    //     //Setting token to axios common header
-    //     fetch.defaults.headers.common["Authorization"] =
-    //       "JWT" + localStorage.getItem("token"); //Getting token from locals storage
-    //     navigation("/Dashboard"); //Navigation to dashboard if user token exists
-
-    //     console.log(response);
-    //   },
-    //   (reason) => {
-    //     console.error(reason);  
-    //     setError("Invalid Username/Password"); // Log in error if login details are incorrect
-    //   }
-    // );
   }
 
-  // //Function to add user phone number/email to local storage
-  // const storeUserInfo = () =>{
-  //   localStorage.getItem("phoneNumber",JSON.stringify(email));
-  // }
-
+// Function to add user phone number/email to local storage
+//   const storeUserInfo = () =>{
+//     localStorage.getItem("phoneNumber",JSON.stringify(email));
+//   }
+  
  
 
   return (

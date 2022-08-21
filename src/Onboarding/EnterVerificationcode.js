@@ -25,7 +25,8 @@ const EnterVerificationcode = () => {
     const navigate = useNavigate();
 
   //Getting phone number from local storage
-  const phoneNumber = JSON.parse(localStorage.getItem("userPhoneNumber"));  
+  const userDetails = JSON.parse(localStorage.getItem("userData"));
+  const phoneNumber = userDetails.phone
 
   //Function to verify account
   const handleClick = (e) => {
