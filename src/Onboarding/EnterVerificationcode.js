@@ -137,9 +137,7 @@ const EnterVerificationcode = () => {
               }}
             />
           </div>
-          <div className = "verificationError">
-            <p>{verificationError}</p>
-          </div>
+            <p className="verificationError">{verificationError}</p>
           <input
             type="submit"
             value="VERIFY ACCOUNT"
