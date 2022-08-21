@@ -28,6 +28,9 @@ const EnterVerificationcode = () => {
   const userDetails = JSON.parse(localStorage.getItem("userData"));
   const phoneNumber = userDetails.phone
 
+  //Setting error if verification fails
+  const [error, setError] = useState("")
+
   //Function to verify account
   const handleClick = (e) => {
     // e.preventdefault (); //Clearing input fields
@@ -53,7 +56,7 @@ const EnterVerificationcode = () => {
           // navigation to create pin page
         navigate("/CreatePin");
         }else{
-          
+          setError("Wrong otp code. Please Resend")
         }
       })
       .catch((error) => {
@@ -74,7 +77,7 @@ const EnterVerificationcode = () => {
   //Function to resend verification code
   const Resend = () => {
     const userPhoneNumber = {
-      phoneNumber: phoneNumber,
+      phone: phoneNumber,
     };
 
     //sending post request
@@ -147,6 +150,7 @@ const EnterVerificationcode = () => {
           <div className="EnterVerificationcodeTxt">
             <p>Relax, we are sending the code in {counter} seconds</p>
           </div>
+          <p>{error}</p>
           <div className="resend">
             <p onClick={Resend}>Resend</p>
           </div>
