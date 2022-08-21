@@ -33,7 +33,7 @@ const EnterVerificationcode = () => {
     // e.preventdefault (); //Clearing input fields
 
     //Post Request
-    const url =  "https://spenndify-expenses-app.herokuapp.com/spendy/user/verify/registration/otp";
+    const url =  "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/verify/registration/otp";
     const otpCode = {
       "receivedOtp": verificationCode,
       "phone": phoneNumber
@@ -52,6 +52,8 @@ const EnterVerificationcode = () => {
         if(response.status === 200){
           // navigation to create pin page
         navigate("/CreatePin");
+        }else{
+          
         }
       })
       .catch((error) => {
