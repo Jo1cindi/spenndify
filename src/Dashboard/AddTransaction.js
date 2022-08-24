@@ -158,9 +158,7 @@ const AddTransaction = () => {
                 value="CONTINUE"
                 className="amountBtn"
                 disabled={amount === ""}
-                onClick={() => {
-                  setOpenCategories(!openCategories);
-                }}
+                onClick={toggleCategories}
               />
             </form>
           </div>

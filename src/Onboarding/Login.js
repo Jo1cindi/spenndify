@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../Components/Logo";
 import { TextField, InputLabel } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
 
 const Login = () => {
   //Pin Input
@@ -42,36 +42,34 @@ const Login = () => {
     };
     console.log(loginDetails)
 
-    fetch(url, {
-      
-      method: "POST",
-      body: JSON.stringify(loginDetails),
-      headers: {
-        'Content-type': 'application/json',
-      }, 
-      mode: 'cors',
-
-    })
-    .then(response => {
-        if(response.status === 200 ) {
-          navigation("/Dashboard"); //Navigation to dashboard if user token exists
-
-        }else{
-          setError("Invalid Username/Password"); // Log in error if login details are incorrect
-        }
+    axios({
+      method: "post",
+      url: url,
+      data: loginDetails,
+      headers: { "Content-Type": "application/json" },
+    }).then(
+      (response) => {
+        //Storing token in local storage
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        console.log(token)
+        navigation("/Dashboard"); //Navigation to dashboard if user token exists
         
-        
+        //Getting the user's name
+        const user = response.data.user
+        localStorage.setItem("user", user)
+
         console.log(response);
-    },(reason) => {
-          console.error(reason);  
-          
-        })
-  }
+      },
+      (reason) => {
+        console.error(reason);  
+        setError("Invalid Username/Password"); // Log in error if login details are incorrect
+      }
+    );
 
-// Function to add user phone number/email to local storage
-//   const storeUserInfo = () =>{
-//     localStorage.getItem("phoneNumber",JSON.stringify(email));
-//   }
+    
+  }
+  
   
  
 

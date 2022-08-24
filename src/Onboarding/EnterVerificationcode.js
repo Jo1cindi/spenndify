@@ -7,12 +7,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const EnterVerificationcode = () => {
-  const [verificationCode, setVerificationCode] = useState("");  //Verification code input values
+  const [verificationCode, setVerificationCode] = useState(""); //Verification code input values
 
-  
   const [counter, setCounter] = useState(60); //Sets the number of seconds the counter should start with
-
-  let verificationError = "";
 
   //Function to trigger counter
   useEffect(() => {
@@ -22,51 +19,52 @@ const EnterVerificationcode = () => {
   }, [counter]);
 
   //navigation to create pin page
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //Getting phone number from local storage
   const userDetails = JSON.parse(localStorage.getItem("userData"));
-  const phoneNumber = userDetails.phone
+  const phoneNumber = userDetails.phone;
 
   //Setting error if verification fails
-  const [error, setError] = useState("")
+  let verificationError = "";
 
   //Function to verify account
   const handleClick = (e) => {
     // e.preventdefault (); //Clearing input fields
 
     //Post Request
-    const url =  "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/verify/registration/otp";
+    const url =
+      "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/verify/registration/otp";
     const otpCode = {
-      "receivedOtp": verificationCode,
-      "phone": phoneNumber
+      receivedOtp: verificationCode,
+      phone: phoneNumber,
     };
     console.log(otpCode);
-    axios({
-      method: "post",
-      url: url,
-      data: otpCode,
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(otpCode),
       headers: {
         "Content-Type": "application/json",
-      }
-    })
-      .then((response) => {
+      },
+    }).then(
+      (response) => {
+        if (response.status === 200) {
+          navigate("/CreatePin");
+          verificationError = "correct otp code";
+        } else if (response.status === 500) {
+          verificationError = "Incorrect otp code. Please try again"; // Log in error if login details are incorrect
+        }
         console.log(response);
-        if(response.status === 200){
-          // navigation to create pin page
-        navigate("/CreatePin");
-        }else{
-          setError("Wrong otp code. Please Resend")
-        }
-      })
-      .catch((error) => {
-        if (error.response.data) {
-          console.log(error.response.data);
-        }
-      });
-  };
+      },
+      (reason) => {
+        console.error(reason);
+      }
+    );
 
-  
+    
+
+
+  };
 
   //Hiding the middle digits of phone number
   const hiddenPhoneNumber = phoneNumber.replace(
@@ -81,14 +79,15 @@ const EnterVerificationcode = () => {
     };
 
     //sending post request
-    const url = "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/send/otp";
+    const url =
+      "https://spenndify-expenses-tracker-app.herokuapp.com/spendy/user/send/otp";
 
     axios({
       method: "post",
       url: url,
       data: userPhoneNumber,
-      headers: { 
-        "Content-Type": "application/json" 
+      headers: {
+        "Content-Type": "application/json",
       },
     })
       .then((response) => {
@@ -137,22 +136,23 @@ const EnterVerificationcode = () => {
               }}
             />
           </div>
-            <p className="verificationError">{verificationError}</p>
           <input
             type="submit"
             value="VERIFY ACCOUNT"
             className="verify"
             onClick={handleClick}
-            disabled = {!verificationCode || verificationCode.length < 4}
+            disabled={!verificationCode || verificationCode.length < 4}
           />
           <div className="EnterVerificationcodeTxt">
             <p>Relax, we are sending the code in {counter} seconds</p>
           </div>
-          <p>{error}</p>
+          <div className="verificationError">
+            {" "}
+            <p>{verificationError}</p>
+          </div>
           <div className="resend">
             <p onClick={Resend}>Resend</p>
           </div>
-          
         </div>
         {/* Animation */}
         <div className="lottie-animation">

@@ -18,10 +18,8 @@ import AddTransactionButton from "../Components/AddTransactionButton";
 
 const Dashboard = () => {
   //Getting user data from local storage
-  const signupData = JSON.parse(localStorage.getItem("userData"));
+  const userName = localStorage.getItem("user");
 
-  //Getting user's name from the user data
-  const name = signupData.firstName + " " + signupData.lastName;
 
   //Getting time to display greeting at the appropriate time
   let date = new Date();
@@ -148,7 +146,7 @@ const Dashboard = () => {
             </div>
             <div className="name">
               <p className="greeting">{greeting}</p>
-              <p className="user-name">{name}</p>
+              <p className="user-name">{userName}</p>
             </div>
           </div>
 
