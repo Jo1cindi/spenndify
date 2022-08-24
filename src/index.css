@@ -1226,6 +1226,7 @@ body{
 /* Verification Page */
 .verificationcard{
   width: 100%;
+  height: 50%;
   box-shadow: none;
   border-radius: 0;
   margin-top: 5px;
@@ -1236,7 +1237,9 @@ body{
 }
 .Verificationcode{
   width: 100%;
-  height: 20vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .Verificationcode h3{
   margin-top: 20px;
@@ -1244,6 +1247,9 @@ body{
 }
 .Verificationcode p{
   font-size: 14px;
+}
+.verificationcode input{
+  margin-top: 0;
 }
 .lottie-animation{
   display: none;
@@ -1254,6 +1260,7 @@ body{
   width: 60%;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .animation-mobile{
   height: 100%;
@@ -1266,7 +1273,8 @@ body{
   object-fit: cover;
 }
 .sendCode{
-  margin-top: 55%;
+  width: 328px;
+  margin: auto;
 }
 
 /* Enter Verification Code  */
@@ -1332,7 +1340,7 @@ body{
 /* Verification With ID */
 .VerificationwithIDcard{
   width: 100%;
-  height: 80%;
+  height: 50%;
   margin: auto;
   background-color: #FBFBFB;
   border-radius: 0;
