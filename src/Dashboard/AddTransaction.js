@@ -20,6 +20,7 @@ import "../Dashboard/DashboardStyles.css";
 import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
 import { IoCloseSharp } from "react-icons/io5";
+import DateTimePicker from 'react-datetime-picker';
 
 
 const AddTransaction = () => {
@@ -128,7 +129,11 @@ const AddTransaction = () => {
   }
   const closeSetTime = () =>{
     setOpenSetTime(false)
-  }
+  } 
+
+  //Setting time value
+  const [time , onChange] = useState(new Date())
+  
 
   return (
     <>
@@ -242,7 +247,7 @@ const AddTransaction = () => {
            <div className="setDateCard">
             <h3>Set Date & Time</h3>
             <div className="dateInput">
-             
+             <DateTimePicker onChange={onChange} value={time} className="datePicker"/>
             </div>
            </div>
          </div>
